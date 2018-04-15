@@ -5,7 +5,7 @@ use Think\Controller;
 class LoginController extends Controller {
     public function index(){
 		
-        $this->display('wap/enlogin');
+        $this->display('enlogin');
     }
     public function phcode(){
 			$vercode=trim(I('post.vercode'));

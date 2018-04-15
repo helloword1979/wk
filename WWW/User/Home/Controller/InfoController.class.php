@@ -1116,12 +1116,7 @@ class InfoController extends CommonController {
 		$lkb=$_POST['lkb'];
 		$zdjy=$_POST['zdjy'];
 		$a=strlen($price);
-		
-		/* $res['status']=2;
-		$res['info']="$price";
-		$this->ajaxReturn($res); */
 		$zd=M('user')->where(array('UE_account'=>$zdjy))->find();
-		//dump($zd);die();
 		$zdname=$zdjy;
 		$c=1;
 		$d=0;
@@ -3820,6 +3815,51 @@ public function xgejmmcl() {
 		
 		
 	
+	}
+	
+	//转让生命数
+	public function zhuanrang(){
+		$this->display();
+	}
+	
+	//转让生命树
+	public function zrsms(){
+		$ajax['code']=0;
+		$uid=$_SESSION['uid'];
+		$num=trim(I("lkb"));
+		$name=trim(I("name"));
+		$data=array();
+		if(!$uid){
+			$ajax['code']=1;
+			$ajax['msg']="转让失败";
+			$this->ajaxReturn($ajax);exit;
+		}
+		$zrzh=M("User")->where("ue_account='".$name."'")->field("life_tree,ue_id")->find();
+		if(!$zrzh){
+			$ajax['code']=1;
+			$ajax['msg']="转让账号不存在";
+			$this->ajaxReturn($ajax);exit;
+		}
+		$ob=M("User")->where("ue_id='".$uid."'")->field("life_tree,ue_id")->find();
+		if($ob){
+			if($ob['life_tree']>=$num){
+				$data['life_tree']=$ob['life_tree']-$num;
+				M("User")->where("ue_id=".$uid)->save($data);
+				$sdata=array();
+				$sdata['life_tree']=$zrzh['life_tree']+$num;
+				$mes=M("User")->where("ue_id=".$zrzh['ue_id'])->save($sdata);
+				$ajax['msg']="转让成功";
+				$this->ajaxReturn($ajax);exit;
+			}else{
+				$ajax['code']=1;
+				$ajax['msg']="转让数量大于本身数量";
+				$this->ajaxReturn($ajax);exit;
+			}
+		}else{
+			$ajax['code']=1;
+			$ajax['msg']="转让失败";
+			$this->ajaxReturn($ajax);exit;
+		}
 	}
 	
 	

@@ -104,7 +104,7 @@ class View {
      * @return string
      */
     public function fetch($templateFile='',$content='',$prefix='') {
-		echo $templateFile;die;
+		//echo $templateFile;die;
         if(empty($content)) {
             $templateFile   =   $this->parseTemplate($templateFile);
             // 模板文件不存在直接返回

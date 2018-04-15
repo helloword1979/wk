@@ -17,9 +17,8 @@ class IndexController extends Controller {
 		$this->assign('list',$result);
 		//dump($result);die();
 		$oob=M('user')->where(array('UE_account'=>$_SESSION['uname']))->find();
-		$kymoney= $oob['ue_money'];
+		$kymoney= $oob['life_tree'];
 		$djmoney = $oob['djmoney'];
-		$kymoney = number_format($kymoney,8);
 		$nickname=$oob['ue_truename'];
 		$this->assign('nickname',$nickname);
 		$this->assign('djmoney',$djmoney);
