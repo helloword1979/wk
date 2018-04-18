@@ -480,23 +480,24 @@ class InfoController extends CommonController {
 				//die("<script>alert('手机验证码已过期');history.back(-1);</script>");
 			}*/
 		//}
-		echo"<pre>";
-		print_r($_POST);
-		echo $zfb;die;
-		$zfbpd=M('user')->where(array('zfb'=>$zfb))->count();
-		
-		$wxpd=M('user')-> where(array('weixin'=>$weixin))->count();
-		$bankpd=M('user')->where(array('yhzh'=>$banknum))->count();
-		
-		$mopd=M('user')->where(array('phone'=>$phone))->count();
+		if($zfb){
+			$zfbpd=M('user')->where(array('zfb'=>$zfb))->count();
+		}
+		if($weixin){
+			$wxpd=M('user')-> where(array('weixin'=>$weixin))->count();
+		}
+		if($banknum){
+			$bankpd=M('user')->where(array('yhzh'=>$banknum))->count();
+		}
+		if($phone){
+			$mopd=M('user')->where(array('phone'=>$phone))->count();
+		}
 		//$this->success($wxpd);
 		if($sj['zfb']==""){
-			echo $zfbpd;die;
 			if($zfbpd>0){
 				$this->success('该支付宝帐户已经存在');
 			}
 		}else{
-			echo $zfbpd;die;
 			if($zfbpd>1){
 				$this->success('该支付宝帐户已经存在');
 			}
