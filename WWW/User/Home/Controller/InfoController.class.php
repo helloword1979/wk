@@ -490,11 +490,12 @@ class InfoController extends CommonController {
 		$mopd=M('user')->where(array('phone'=>$phone))->count();
 		//$this->success($wxpd);
 		if($sj['zfb']==""){
-			//$this->success('11111111');
+			echo $zfbpd;die;
 			if($zfbpd>0){
 				$this->success('该支付宝帐户已经存在');
 			}
 		}else{
+			echo $zfbpd;die;
 			if($zfbpd>1){
 				$this->success('该支付宝帐户已经存在');
 			}
