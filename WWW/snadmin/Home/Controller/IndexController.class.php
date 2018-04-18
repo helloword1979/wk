@@ -9,7 +9,7 @@ class IndexController extends CommonController {
     	 
     	$this->display('index/admin_add');
     }
-    function main(){
+    function index(){
 		
 		$this->display("index/main");
 	}

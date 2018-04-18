@@ -28,7 +28,7 @@ class LoginController extends Controller {
 				$record1['leixin'] = 1;
 				M ( 'drrz' )->add ( $record1 );
 				$_SESSION['logintime'] = time();
-				die("<script>alert('登入成功！');document.location.href='/admin.php/Home/Index/main';</script>");
+				die("<script>alert('登入成功！');document.location.href='/admin.php/Home/Index/index';</script>");
     	}}
     	}
     }
