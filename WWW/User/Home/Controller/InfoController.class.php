@@ -480,8 +480,9 @@ class InfoController extends CommonController {
 				//die("<script>alert('手机验证码已过期');history.back(-1);</script>");
 			}*/
 		//}
-		
-		
+		echo"<pre>";
+		print_r($_POST);
+		echo $zfb;die;
 		$zfbpd=M('user')->where(array('zfb'=>$zfb))->count();
 		
 		$wxpd=M('user')-> where(array('weixin'=>$weixin))->count();
