@@ -278,7 +278,7 @@ class LoginController extends Controller {
 							$map['uid'] = $rs;
 							$orderform->add($map);
 						} */
-					die("<script>alert('注册成功');window.location.href='/index.php/Home/Myuser/ssgh/';</script>");
+					die("<script>alert('注册成功');window.location.href='/index.php/Home/Index/Index/';</script>");
 				}
 			
 		}
