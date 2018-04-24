@@ -155,47 +155,32 @@ class LoginController extends Controller {
 	}
 	public function register() {
 	header("Content-Type:text/html; charset=utf-8");
-	//die("<script>alert('系统维护维护升级,暂停注册功能');history.back(-1);</script>");
+		$phone=trim(I("username"));
 		$a=rand(000000,999999);
 		$b= G.$a;
 		if (IS_POST) {
 			$users = M ( 'user' );
-			$rsname=$users->where(array('UE_account'=>I ( 'post.phone' )))->find();
-			$cz=$users->where(array('phone'=>I ( 'post.phone' )))->find();
-			$yanzheng=M('retrieve_token')->where(array('user_email'=>I ( 'post.phone' )))->order('id desc')->find();
-			$vercode=trim(I('post.vercode'));
-			//dump($_POST);die();
-			/* if(!$yanzheng){
-				die("<script>alert('验证码输入不正确');history.back(-1);</script>");
-			}
-			if($_POST['code']!=$yanzheng['voder'] && $_POST['code']!=527720){
-				die("<script>alert('验证码输入不正确');history.back(-1);</script>");
-			} */
-			/* if(!$this->check_verify($vercode)){
-			// added ends
-				die("<script>alert('验证码错误，请刷新验证码！');history.back(-1);</script>");
-				//$this->ajaxReturn( array('nr'=>'驗證碼錯誤,請刷新驗證碼!','sf'=>0) );
-			} */
+			$rsname=$users->where(array('UE_account'=>$phone))->find();
+			$cz=$users->where(array('phone'=>$phone))->find();
+			$yanzheng=M('retrieve_token')->where(array('user_email'=>$phone ))->order('id desc')->find();
+			//$vercode=trim(I('captcha'));
 			if($cz){
-				die("<script>alert('该手机号已经邦定该系统');history.back(-1);</script>");
+				echo json_encode(array('code'=>1,'msg'=>'该手机号已经邦定该系统'));exit();
 			}
 			if ($rsname) {
-				$this->error('该手机号已经存在');
+				echo json_encode(array('code'=>1,'msg'=>'该手机号已经存在'));exit();
 			}
-			if($_POST['pwd']!=$_POST['pwd2']){
-				die("<script>alert('登陆密码两次输入不一致');history.back(-1);</script>");
+			if($_POST['login_pwd']!=$_POST['login_pwd_repeat']){
+				echo json_encode(array('code'=>1,'msg'=>'登陆密码两次输入不一致'));exit();
 			}
-			if($_POST['aqpwd']!=$_POST['aqpwd2']){
-				die("<script>alert('安全密码两次输入不一致');history.back(-1);</script>");
+			if($_POST['deal_pwd']!=$_POST['deal_pwd_repeat']){
+				echo json_encode(array('code'=>1,'msg'=>'安全密码两次输入不一致'));exit();
 			}
-			$re=M('smscode')->where(array('mobile' => I ( 'post.phone' ),'regcode'=>I ( 'post.code' )))->find(); 
-			//if ($re['edittime'] > time()) {
-				if (!$re['regcode']==I ( 'post.code' )) {
-					$this->error('手机验证码不正确');
-				}
-			//}else {
-				//$this->error('手机验证码已经过期');
-			//}
+			$re=M('smscode')->where(array('mobile' => $phone,'regcode'=>I ( 'captcha' )))->find(); 
+			
+			if (!$re['regcode']==I ( 'captcha' )) {
+				echo json_encode(array('code'=>1,'msg'=>'手机验证码不正确'));exit();
+			}
 			
 			$id = $_POST['uid'];
 			
@@ -204,81 +189,17 @@ class LoginController extends Controller {
 				$sjid=$user['ue_id'];
 				
 				$data['tpath'] =  $sjpath.','.$sjid;
-				$data['UE_account']=$_POST['phone'];
-				$data['UE_password'] = md5(I('post.pwd'));
+				$data['UE_account']=$phone;
+				$data['UE_password'] = md5(I('login_pwd'));
 				$data['UE_accName'] = $user['ue_account'];
 				$data['UE_accuid'] = $user['ue_id'];
 				$data['UE_truename'] = $b;
-				$data['UE_secpwd'] = md5(I('post.aqpwd'));
-				$data['phone']  = $_POST['phone'];
+				$data['UE_secpwd'] = md5(I('deal_pwd'));
+				$data['phone']  = $phone;
 				$rs=M('user')->add($data);
 				
 				if($rs){
-					/*$time=date('Y-2-17 00:00:00');
-					$time1=date('Y-2-28 23:59:59');
-					$time2=date('Y-3-1 00:00:00');
-					$date=strtotime($time);
-					$date1=strtotime($time1);
-					$date2=strtotime($time2);
-					$a=time();
-					//注册赠送矿机
-						 if($a>=$date && $a<=$date1){
-							$yCode = array('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J');
-							$orderSn = $yCode[intval(date('Y')) - 2011] . date('d') . substr(time(), -5) . sprintf('%02d', rand(0, 99));
-							$project=M('shop_project')->where(array('id'=>210))->find();
-							$orderform = M('shop_orderform');
-							$map['user'] = $_POST['phone'];
-							$map['project']=$project['name'];
-							$map['enproject']=$project['enname'];
-							$map['yxzq'] = $project['yxzq'];
-							$map['sumprice'] = $project['price'];
-							$map['addtime'] = date('Y-m-d H:i:s');
-							$map['username']=$result['ue_truename'];
-							$map['imagepath'] =$project['imagepath'];
-							$map['lixi']	= $project['fjed'];
-							$map['qwsl'] = $project['qwsl'];
-							$map['kjsl'] = $project['kjsl'];
-							$map['kjbh'] = $orderSn;
-							$map['uid'] = $rs;
-							$orderform->add($map);
-							//第二台
-							$map1['user'] = $_POST['phone'];
-							$map1['project']=$project['name'];
-							$map1['enproject']=$project['enname'];
-							$map1['yxzq'] = $project['yxzq'];
-							$map1['sumprice'] = $project['price'];
-							$map1['addtime'] = date('Y-m-d H:i:s');
-							$map1['username']=$result['ue_truename'];
-							$map1['imagepath'] =$project['imagepath'];
-							$map1['lixi']	= $project['fjed'];
-							$map1['qwsl'] = $project['qwsl'];
-							$map1['kjsl'] = $project['kjsl'];
-							$map1['kjbh'] = $orderSn;
-							$map1['uid'] = $rs;
-							$orderform->add($map1);
-						}
-						
-						if($a>=$date2){
-							$yCode = array('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J');
-							$orderSn = $yCode[intval(date('Y')) - 2011] . date('d') . substr(time(), -5) . sprintf('%02d', rand(0, 99));
-							$project=M('shop_project')->where(array('id'=>210))->find();
-							$orderform = M('shop_orderform');
-							$map['user'] = $_POST['phone'];
-							$map['project']=$project['name'];
-							$map['enproject']=$project['enname'];
-							$map['yxzq'] = $project['yxzq'];
-							$map['sumprice'] = $project['price'];
-							$map['addtime'] = date('Y-m-d H:i:s');
-							$map['username']=$result['ue_truename'];
-							$map['imagepath'] =$project['imagepath'];
-							$map['lixi']	= $project['fjed'];
-							$map['qwsl'] = $project['qwsl'];
-							$map['kjsl'] = $project['kjsl'];
-							$map['kjbh'] = $orderSn;
-							$map['uid'] = $rs;
-							$orderform->add($map);
-						} */
-					die("<script>alert('注册成功');window.location.href='/index.php/Home/Index/Index/';</script>");
+					echo json_encode(array('code'=>0,'msg'=>'注册成功'));exit();
 				}
 			
 		}

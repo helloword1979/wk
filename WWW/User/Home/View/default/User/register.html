@@ -1,0 +1,75 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+       
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/dest/css/reset.css">
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/dest/css/global.css">
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/dest/css/register.css">
+        <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_640143_1nxyg8s1sdmwjyvi.css">
+        <title>注册</title>
+        <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+</head>
+<body id="before-login">
+    <div id="before-login__wrap">
+        <div class="logo-wrap">
+            <div class="wrap2">
+                <div class="logo"></div>
+            </div>
+        </div>
+        <div id="registers">
+            <!-- 第一种 -->
+            <div class="form-group">
+                <div class="edit-item">
+                    <span class="iconfont  icon-user"></span>
+                    <input type="text" class="form-control" id="username" name="username" placeholder="输入手机号">
+                </div>
+            </div>
+             <div class="form-group">
+                <div class="edit-item">
+                    <span class="iconfont  icon-lock"></span>
+                    <input type="password" class="form-control" id="login_pwd" name="login_pwd" placeholder="输入登陆密码">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="edit-item">
+                    <span class="iconfont  icon-user"></span>
+                    <input type="password" class="form-control" id="login_pwd_repeat" name="login_pwd_repeat" placeholder="确认登陆密码">
+                </div>
+            </div>
+             <div class="form-group">
+                <div class="edit-item">
+                    <span class="iconfont  icon-lock"></span>
+                    <input type="password" class="form-control" id="deal_pwd" name="deal_pwd" placeholder="输入交易密码">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="edit-item">
+                    <span class="iconfont  icon-user"></span>
+                    <input type="password" class="form-control" id="deal_pwd_repeat" name="deal_pwd_repeat" placeholder="确认交易密码">
+                </div>
+            </div>
+             <div class="form-group">
+                <div class="edit-item captcha">
+                    <span class="iconfont icon-mn_dunpai" style="font-size: 18px"></span>
+                    <input type="password" class="form-control" id="captcha" name="captcha" placeholder="输入验证码">
+                    <div style="width: 44%;display: inline-block;text-align: right;">
+                        <span id="sms_code">获取</span>
+                    </div>
+                </div>
+            </div>          
+            <!-- 第一种 end -->
+            <div>
+                <button id="register" type="button" class="btn  green register" style="display:block;margin-top:20px;">注<span style="margin-left: 16px">册</span></button>
+            </div>
+        </div>
+
+    </div>
+</body>
+<script src="__PUBLIC__/dest/js/lib/jquery-3.3.1.min.js"></script>
+<script src="__PUBLIC__/dest/js/lib/global.js"></script>
+<script src="__PUBLIC__/dest/js/page/register.js"></script>
+</html>

@@ -36,7 +36,7 @@ class UserController extends Controller
 		
 		//if(isMobile()){
 			$this->assign('id',$id);
-			$this->display();
+			$this->display("register");
 		//}
 		
 		

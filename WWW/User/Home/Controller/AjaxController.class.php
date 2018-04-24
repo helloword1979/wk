@@ -1,6 +1,7 @@
 <?php
 namespace Home\Controller;
 use Home\Controller\Basis1Controller;
+use Vendor\Sms\ChuanglanSmsApi;
 class AjaxController extends Basis1Controller{
 	public function getmobilecode1(){
 		$mobile=trim(I('post.mobile'));
@@ -120,19 +121,38 @@ class AjaxController extends Basis1Controller{
 			}
 		}	
 		//发送手机验证码
-		$qycode=rand(111111,999999);
-		$apikey = "18bc71626676dd01e0acd5bac5aef753"; //请用自己的apikey代替
-		$text="【外包科技】您的验证码是{$qycode}。如非本人操作，请忽略本短信";
-		//$url="http://yunpian.com/v1/sms/send.json";
-		$url="https://sms.yunpian.com/v2/sms/single_send.json";
+		// $qycode=rand(111111,999999);
+		// $apikey = "18bc71626676dd01e0acd5bac5aef753"; //请用自己的apikey代替
+		// $text="【外包科技】您的验证码是{$qycode}。如非本人操作，请忽略本短信";
+		// //$url="http://yunpian.com/v1/sms/send.json";
+		// $url="https://sms.yunpian.com/v2/sms/single_send.json";
 		
-		$encoded_text = urlencode("$text");
+		// $encoded_text = urlencode("$text");
+		// $mobile = urlencode("$mobile");
+		// $post_string="apikey=$apikey&text=$encoded_text&mobile=$mobile";
+		// $info = parent::sock_post($url, $post_string);
+		// $infoary=explode(',',$info);
+		// if ($infoary[0]!='{"code":0'){
+			// echo json_encode('发送失败');exit();
+		// }
+		$clapi  = new ChuanglanSmsApi();
+		$qycode=rand(111111,999999);
+		$text="【万德瑞】您的验证码是{$code}。如非本人操作，请忽略本短信";
 		$mobile = urlencode("$mobile");
-		$post_string="apikey=$apikey&text=$encoded_text&mobile=$mobile";
-		$info = parent::sock_post($url, $post_string);
-		$infoary=explode(',',$info);
-		if ($infoary[0]!='{"code":0'){
-			echo json_encode('发送失败');exit();
+		$result = $clapi->sendSMS($mobile,$text);
+		if(!is_null(json_decode($result))){
+			
+			$output=json_decode($result,true);
+			//print_r($output);die;
+			if(isset($output['code'])  && $output['code']=='0'){
+				// echo '短信发送成功！' ;
+				// die;
+			}else{
+				echo $output['errorMsg'];exit;
+			}
+		}else{
+				//echo"11111111";
+				echo $result;exit;
 		}
 		if ($rsyz){
 			if(false===$smscode->where(array('id'=>$rsyz['id']))->setField(array('regcode'=>$qycode,'sendtime'=>time(),'state'=>0,'edittime'=>time()+600))){
