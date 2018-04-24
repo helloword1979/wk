@@ -755,7 +755,8 @@ class LoginController extends Controller {
     
    public function logincl() {
     	header("Content-Type:text/html; charset=utf-8");
-		echo 123456789;
+
+		echo 232323223299999999999999993;
     	//echo I('post.ip');die;
     	if (IS_POST) {
 			
