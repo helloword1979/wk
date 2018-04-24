@@ -1,0 +1,99 @@
+/* 未登陆之前的主题样式 */
+#before-login {
+    background: url(../image/bg.jpg) no-repeat fixed top;
+    background-size: 100% 100%;
+}
+#before-login__wrap {
+        background: rgba(250, 250, 250, 0.3);
+        border-radius: 30px;
+        padding: 16px 29px;
+        width:80%;
+        left: 0 ;
+        right: 0;
+        top: 15%;
+        margin: auto;
+        min-height: 50%;        
+        position: fixed
+    }
+#before-login__wrap .logo-wrap {
+    width:105px;
+    height: 105px;
+    background: #45afd7;
+    border-radius: 100%;
+    position: relative;
+    top: -50%;
+    left: 50%;
+    margin-bottom: -41px;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+#before-login__wrap .logo-wrap .wrap2 {
+    width: 85px;
+    height: 85px;
+    top:0;
+    bottom:0;
+    left:0;
+    right: 0;
+    position: absolute;
+    border-radius: 100%;
+    margin: auto;
+    background: rgba(255,255,255,0.3);
+}
+#before-login__wrap .logo-wrap .wrap2 .logo {
+    width: 75px;
+    border-radius: 100%;
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    margin: auto;
+    height: 75px;
+    background: url(../image/logo.jpg) no-repeat center;
+    background-size: 100%;
+}
+.edit-item {
+    border-bottom: 2px solid white;
+    position: relative;
+    color: white
+}
+.edit-item .iconfont {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    font-weight: 600;
+    margin:auto;
+    font-size: 15px;
+}
+.edit-item input {
+        color: inherit;
+        background: none;
+        padding-left: 30px;
+        outline: none;
+        border: 0px;
+        -webkit-box-shadow: none;
+                box-shadow: none;
+}
+.edit-item input:focus {
+    -webkit-box-shadow:none;
+    box-shadow:none;
+}
+.edit-item input::-webkit-input-placeholder {
+        color: white;
+        font-size: 15px;
+}
+.edit-item.captcha #captcha {
+            width: 50%;
+            display: inline-block;
+}
+/*绿色主题按钮*/
+.btn.green {
+    background: #3eb85c;
+    color:white;
+    font-size: 18px;
+    -webkit-box-shadow: 0 5px 15px 0 rgba(42, 52, 65, 0.2);
+    box-shadow: 0 5px 15px 0 rgba(42, 52, 65, 0.2);
+}
+.btn.green:focus, .btn.green:active {
+    color:white;
+}

@@ -1,0 +1,35 @@
+.btn {
+    &.green {
+        background: #3eb85c;
+        color:white;
+        font-size: 18px;
+        box-shadow: 0 5px 15px 0 rgba(42, 52, 65, 0.2);
+        &:focus, &:active {
+            
+       }
+    }
+    &.register {
+        font-size: 18px;
+        color: white !important;
+        background-color: rgba(255,255, 255, 0);
+        box-shadow: 0 5px 15px 0 rgba(42, 52, 65, 0.2);
+        &:focus, &:active,  {
+            background-color: rgba(255,255, 255, 0) !important;
+       }
+    }
+}
+.foot {
+    float:right;
+    margin-top: 20px;
+    color: white;
+    font-size: 15px;
+    a {
+        color:inherit;
+        font-size: inherit;
+        letter-spacing: 2px;
+        &:focus, &:hover {
+            color: rgba(233, 233,233,1);
+            text-decoration: none !important;
+        };
+    }
+}

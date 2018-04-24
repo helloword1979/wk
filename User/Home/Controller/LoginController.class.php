@@ -5,7 +5,8 @@ use Think\Controller;
 class LoginController extends Controller {
     public function index(){
 		
-        $this->display('enlogin');
+        // $this->display('enlogin');
+        $this->display('login');
     }
     public function phcode(){
 			$vercode=trim(I('post.vercode'));
@@ -484,10 +485,7 @@ class LoginController extends Controller {
 		
 	}
 	public function retrieve_password(){
-		
 		if( IS_POST ){
-			
-			
 			$user_data = M( 'user' )->where( array( 'UE_account' => I( 'post.mobile' ) ) )->find();
 			if( $user_data === NULL ){
 			 	$this->ajaxReturn('用户不存在');
@@ -777,7 +775,6 @@ class LoginController extends Controller {
 			}else{
 				//if (empty($phone)) {
 					$user=M('user')->where(array('UE_account'=>$username))->find();
-				
 				if(!$user || $user['ue_password']!=md5($pwd)){ 
 					$arr['status']=0;
 					$arr['msg']="账号或密码错误！";
@@ -820,10 +817,8 @@ class LoginController extends Controller {
     	header("Content-Type:text/html; charset=utf-8");
     	//echo I('post.ip');die;
     	if (IS_POST) {
-			
     		//$this->error('系統暫未開放!');die;
 	    	$username=trim(I('post.account'));
-			
 			$pwd=trim(I('post.password'));
 			//$verCode = trim(I('post.verCode'));//驗證碼
 			//dump($pwd);die;

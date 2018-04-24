@@ -1,112 +1,54 @@
-<!doctype html>
-<html lang="zh">
-<head>
-   <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-    <title>Sign In</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="wap-font-scale" content="no">
-	<link rel="stylesheet" href="__PUBLIC__/Home/css/weui.min.css">
-    <link rel="stylesheet" href="__PUBLIC__/web/css/jquery-weui.min.css">
-	
-	<link rel="stylesheet" href="__PUBLIC__/reg/css/style.css">
-	<link rel="stylesheet" href="__PUBLIC__/reg/css/common.css">
-	<style>
-	.wrapper{
-	min-height:auto;
-	}
-	</style>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+       
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/smtree/dest/css/reset.css">
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/smtree/dest/css/global.css">
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/smtree/dest/css/login.css">
+        <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_640143_1nxyg8s1sdmwjyvi.css">
+        <title>test</title>
+        <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
 </head>
-<body class="page-mobile ">
-    <div class="wrapper login-wrapper">
-    <!-- logo S -->
-    <div >
-	<img src="/Public/web/img/logo.jpg" style="width:36%;margin-left:32%;margin-top:10px;border-radius:10px;margin-bottom:10px"/>
-    </div>
-    <!-- logo E -->
-    <!-- 登录输入表单 S -->
-	<form name="logFrm" id="logFrm" method="post" onsubmit="return false;" >
-    <div class="login-form def-m mb10">
-	 <li class="comc-item">
-                <div class="com-formbox" style="overflow:hidden;display:block;">
-							<a href="/Index.php/Home/Login/login/" style="float:left;width:50%;text-align:center;line-height:30px;color:#333;">中文</a>
-							<a href="/Index.php/Home/Login/enlogin/" style="float:right;width:50%;text-align:center;line-height:30px;color:#05B6A3;">English</a>
+<body id="before-login">
+    <form>
+    <div id="before-login__wrap">
+        <div class="logo-wrap">
+            <div class="wrap2">
+                <div class="logo"></div>
+            </div>
+        </div>
+        <div id="signin">
+            <!-- 第一种 -->
+            <div class="form-group">
+                <div class="edit-item">
+                    <span class="iconfont  icon-user"></span>
+                    <input type="text" class="form-control" id="username" name="account" placeholder="输入手机号">
                 </div>
-            </li>
-        <ul class="com-columns span2">
-            <li class="comc-item">
-                <div class="com-formbox">
-                    <label class="formbox-hd" for="username"><i class="iconfont icon-user"></i>&nbsp;</label>
-                    <span class="formbox-bd"><input  type="text" id="username" name="account"  onkeyup="this.value=this.value.replace(/ /g,'')" maxlength="60" class="input-txt" placeholder="Should be your email " /></span>
+            </div>
+             <div class="form-group">
+                <div class="edit-item">
+                    <span class="iconfont  icon-lock"></span>
+                    <input type="password" class="form-control" id="password" name='password' placeholder="输入密码">
                 </div>
-            </li>
-            <li class="comc-item">
-                <div class="com-formbox">
-                    <label class="formbox-hd" for="password"><i class="iconfont icon-lock"></i>&nbsp;</label>
-                    <span class="formbox-bd"><input  type="password" id="password" name="password" onkeyup="this.value=this.value.replace(/ /g,'')" maxlength="16" class="input-txt" placeholder="Login password" /></span>
-                </div>
-            </li>
-        </ul>
-
+            </div>
+            <div>
+                <button id='login' type="button" class="btn btn-success green mysubmit" style="display:block; width: 100%;">登<span style="margin-left: 16px">陆</span></button>
+                <button id="register" type="button" class="btn btn-default register" style="display:block; width: 100%;margin-top:20px;">注<span style="margin-left: 16px">册</span></button>
+            </div>
+            <div class="foot">
+                <a href="">忘记密码?</a>
+            </div>
+            <!-- 第一种 end -->
+        </div>
     </div>
-    <!-- 登录输入表单 E -->
-    <!-- 通用按钮 S -->
-    <div class="def-p com-btnbox mb10">
-	<button id="mysubmit" style="background-color:#05B6A3;width:100%;height:47px;line-height:47px;color:#fff;border:0px;border-radius:5px;font-size:16px;">Sign in</button>
-       <!--  <a href="#" class="btn btn-1 btn-dis" id="login_btn">登录</a> -->
-    </div>
-</form>	
-    <!-- 通用按钮 E -->
-
-    <!-- 忘记密码 S -->
-    <div class="def-p txtr">
-        <a href="/Index.php/Home/Login/enretrieve_password/" class="fz13 link" id="findPwd_btn">Forget password</a>
-    </div>
-    <!-- 忘记密码 E -->
-
-   
-</div>
-<!-- 登录主要内容 E -->
-</div>
-<script type='text/javascript'>var ROOT = "";</script>
-<script src="__PUBLIC__/reg/js/jquery-1.11.3.min.js"></script>
-<script src="__PUBLIC__/web/js/jquery-weui.min.en.js"></script>
-<script type="text/javascript" src="__PUBLIC__/reg/js/common.js"></script>
-<script type="text/javascript" src="__PUBLIC__/reg/js/login.js"></script>
-<div class="loading-wrapper" style="display: none;">
-<div class="loading-area">
-<div id="floatingBarsG1" class="floatingBarsG"></div>
-
-</div>
-<div class="mask" style="opacity: 0.3;"></div>
-</div>
-<script>
-    $(function(){
-      $("#mysubmit").bind("click",function(){
-        $.ajax({
-            url:"{:U('/Index.php/Home/Login/enlogincl')}",
-            type:"post",
-            data:$("form").serialize(),
-            dataType:"json",
-            success:function(data){
-			console.log(data);
-                if(data.status==1){
-	
-                    location.href="/index.php/Home/Info/enmykuangche/";
-                }else{
-					$.alert(data.msg);
-                }
-            },error:function(){
-
-            },comptele:function(){
-
-            }
-        })
-     })
-    })
-</script>
-	</body>
+    </form>
+</body>
+<script src="__PUBLIC__/smtree/dest/js/lib/jquery-3.3.1.min.js"></script>
+<script src="__PUBLIC__/smtree/dest/js/lib/global.js"></script>
+<script src="__PUBLIC__/smtree/dest/js/page/login.js"></script>
 </html>
+

@@ -1,0 +1,28 @@
+{
+  "name": "free",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "7.1.1",
+    "gulp-connect": "^5.5.0",
+    "gulp-postcss": "^7.0.1",
+    "gulp-watch": "^5.0.0",
+    "postcss-calc": "5.3.1",
+    "postcss-each": "^0.9.3",
+    "postcss-flexibility": "^2.0.0",
+    "postcss-global-import": "^1.0.0",
+    "postcss-import": "^9.1.0",
+    "postcss-loader": "^2.0.6",
+    "postcss-mixins": "^5.4.1",
+    "postcss-nested": "^1.0.0",
+    "postcss-scss": "^0.4.0",
+    "postcss-selector-not": "^2.0.0",
+    "precss": "^3.1.2"
+  }
+}
