@@ -1,0 +1,471 @@
+[ 2018-04-09T17:24:43+08:00 ] 127.0.0.1 /Index.php/Home/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000048s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001538s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001368s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001646s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000174s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000583s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023637s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023824s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001086s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.006331s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.007813s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002096s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002378s ]
+
+[ 2018-04-09T17:24:44+08:00 ] 127.0.0.1 /Index.php/Home/Login/j/Public/reg/s/login.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000062s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001607s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001225s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001553s ]
+ERR: 非法操作:j
+
+[ 2018-04-09T17:26:32+08:00 ] 127.0.0.1 /Index.php/Home/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000056s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004478s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001299s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001561s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000458s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001064s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.066083s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.066259s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001016s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.001186s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002562s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001349s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001580s ]
+
+[ 2018-04-09T17:26:32+08:00 ] 127.0.0.1 /Index.php/Home/Login/j/Public/reg/s/login.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000064s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001249s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001215s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001520s ]
+ERR: 非法操作:j
+
+[ 2018-04-09T17:29:35+08:00 ] 127.0.0.1 /Index.php/Home/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000075s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001368s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001962s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002204s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000144s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000340s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031437s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031608s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000970s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.001031s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002235s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001197s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001350s ]
+
+[ 2018-04-09T17:29:52+08:00 ] 127.0.0.1 /Index.php/Home/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000054s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000965s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001111s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001284s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000141s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000313s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.036514s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.036955s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001424s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.001135s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002931s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001553s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002073s ]
+
+[ 2018-04-09T17:30:51+08:00 ] 127.0.0.1 /Index.php/Home/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000068s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001080s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000919s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001105s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000213s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000495s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.043441s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.043637s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000488s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000965s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001685s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001551s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001712s ]
+
+[ 2018-04-09T17:31:09+08:00 ] 127.0.0.1 /Index.php/Home/Login/enlogincl.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000803s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001145s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001307s ]
+
+[ 2018-04-09T17:31:22+08:00 ] 127.0.0.1 /Index.php/Home/Login/enlogincl.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000051s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001367s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001094s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001321s ]
+
+[ 2018-04-09T17:31:29+08:00 ] 127.0.0.1 /Index.php/Home/Login/login/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000663s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000770s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000136s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000305s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.075841s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.076013s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000999s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.001069s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002358s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001378s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001539s ]
+
+[ 2018-04-09T17:31:38+08:00 ] 127.0.0.1 /Index.php/Home/Login/logincl.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000054s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001155s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002214s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002475s ]
+SQL: SHOW COLUMNS FROM `jk_user` [ RunTime:0.0032s ]
+SQL: SELECT * FROM `jk_user` WHERE `UE_account` = '15515551555' LIMIT 1   [ RunTime:0.0009s ]
+NOTIC: [8] Use of undefined constant ue_id - assumed 'ue_id' D:\wamp64\www\zhangfusheng\kuang\WWW\User\Home\Controller\LoginController.class.php 第 796 行.
+NOTIC: [8] Use of undefined constant ue_account - assumed 'ue_account' D:\wamp64\www\zhangfusheng\kuang\WWW\User\Home\Controller\LoginController.class.php 第 797 行.
+NOTIC: [8] Use of undefined constant ue_account - assumed 'ue_account' D:\wamp64\www\zhangfusheng\kuang\WWW\User\Home\Controller\LoginController.class.php 第 801 行.
+SQL: SHOW COLUMNS FROM `jk_drrz` [ RunTime:0.0179s ]
+SQL: INSERT INTO `jk_drrz` (`date`,`ip`,`user`,`leixin`) VALUES ('2018-04-09 17:31:38','','15515551555','0') [ RunTime:0.0059s ]
+
+[ 2018-04-09T17:31:39+08:00 ] 127.0.0.1 /index.php/Home/Myuser/ssgh/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000050s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001052s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000843s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001024s ]
+SQL: SHOW COLUMNS FROM `jk_system` [ RunTime:0.0186s ]
+SQL: SELECT * FROM `jk_system` WHERE `SYS_ID` = 1 LIMIT 1   [ RunTime:0.1204s ]
+SQL: SHOW COLUMNS FROM `jk_user` [ RunTime:0.0021s ]
+SQL: SELECT * FROM `jk_user` WHERE `UE_ID` = 1 LIMIT 1   [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `jk_ppdd` [ RunTime:0.0069s ]
+SQL: SELECT * FROM `jk_ppdd` WHERE `g_user` = '15515551555' AND `zt` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `jk_ppdd` WHERE `g_user` = '15515551555' AND `zt` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jk_user` WHERE `UE_account` = '15515551555' LIMIT 1   [ RunTime:0.0007s ]
+SQL: UPDATE `jk_ppdd` SET `zt`='0',`jydate`='',`g_name`='',`g_user`='',`g_level`='',`g_id`='' WHERE `g_user` = '15515551555' AND `zt` = 1 [ RunTime:0.0741s ]
+NOTIC: [8] Use of undefined constant date - assumed 'date' D:\wamp64\www\zhangfusheng\kuang\WWW\User\Home\Controller\CommonController.class.php 第 88 行.
+SQL: SHOW COLUMNS FROM `jk_date` [ RunTime:0.0266s ]
+SQL: SELECT * FROM `jk_date` WHERE `date` = 1523203230 LIMIT 1   [ RunTime:0.0095s ]
+NOTIC: [8] Use of undefined constant date - assumed 'date' D:\wamp64\www\zhangfusheng\kuang\WWW\User\Home\Controller\CommonController.class.php 第 93 行.
+SQL: SELECT * FROM `jk_date` ORDER BY id desc LIMIT 1   [ RunTime:0.0004s ]
+SQL: INSERT INTO `jk_date` (`date`,`price`) VALUES ('1523203230','0.9') [ RunTime:0.0004s ]
+SQL: INSERT INTO `jk_date` (`date`,`price`) VALUES ('1523203260','0.9') [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jk_user` WHERE `UE_account` = '15515551555' LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `jk_ghgl` [ RunTime:0.0063s ]
+SQL: SELECT * FROM `jk_ghgl` WHERE `uid` = '1' LIMIT 1   [ RunTime:0.0006s ]
+NOTIC: [8] Undefined index: ssghgl D:\wamp64\www\zhangfusheng\kuang\WWW\User\Home\Controller\MyuserController.class.php 第 420 行.
+SQL: SELECT * FROM `jk_user` WHERE ( UE_ID in (0) ) AND `ktghgl` = 2 AND `UE_ID` <> '1' ORDER BY UE_ID desc LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT * FROM `jk_ghgl` WHERE `uid` = null LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000249s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000673s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.073348s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.073601s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001199s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.001062s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002547s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001489s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001661s ]
+
+[ 2018-04-09T17:31:52+08:00 ] 127.0.0.1 /Index.php/Home/Index/Index/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000887s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001022s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001214s ]
+SQL: SHOW COLUMNS FROM `jk_userget` [ RunTime:0.0484s ]
+NOTIC: [8] Use of undefined constant wakuang - assumed 'wakuang' D:\wamp64\www\zhangfusheng\kuang\WWW\User\Home\Controller\IndexController.class.php 第 15 行.
+SQL: SELECT * FROM `jk_userget` WHERE `UG_account` = '15515551555' AND `UG_dataType` = 'wakuang' ORDER BY UG_ID DESC  [ RunTime:0.0611s ]
+SQL: SHOW COLUMNS FROM `jk_user` [ RunTime:0.0022s ]
+SQL: SELECT * FROM `jk_user` WHERE `UE_account` = '15515551555' LIMIT 1   [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000153s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000316s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.041038s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.041209s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001042s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.001055s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002334s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001233s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001389s ]
+
+[ 2018-04-09T17:32:09+08:00 ] 127.0.0.1 /Index.php/Home/Info/tuiguangma/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000761s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001077s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001295s ]
+SQL: SHOW COLUMNS FROM `jk_system` [ RunTime:0.0018s ]
+SQL: SELECT * FROM `jk_system` WHERE `SYS_ID` = 1 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `jk_user` [ RunTime:0.0019s ]
+SQL: SELECT * FROM `jk_user` WHERE `UE_ID` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `jk_ppdd` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `jk_ppdd` WHERE `g_user` = '15515551555' AND `zt` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `jk_ppdd` WHERE `g_user` = '15515551555' AND `zt` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jk_user` WHERE `UE_account` = '15515551555' LIMIT 1   [ RunTime:0.0006s ]
+SQL: UPDATE `jk_ppdd` SET `zt`='0',`jydate`='',`g_name`='',`g_user`='',`g_level`='',`g_id`='' WHERE `g_user` = '15515551555' AND `zt` = 1 [ RunTime:0.0006s ]
+NOTIC: [8] Use of undefined constant date - assumed 'date' D:\wamp64\www\zhangfusheng\kuang\WWW\User\Home\Controller\CommonController.class.php 第 88 行.
+SQL: SHOW COLUMNS FROM `jk_date` [ RunTime:0.0067s ]
+SQL: SELECT * FROM `jk_date` WHERE `date` = 1523203230 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: name D:\wamp64\www\zhangfusheng\kuang\WWW\User\Home\Controller\InfoController.class.php 第 843 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000121s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000284s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030799s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030989s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001056s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.001110s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002407s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001284s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001442s ]
+
+[ 2018-04-09T22:57:01+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.017458s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.090556s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.090764s ]
+
+[ 2018-04-09T22:57:02+08:00 ] 127.0.0.1 /Index.php/Home/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000041s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001412s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001686s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001862s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000125s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000294s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.311901s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.312079s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.088030s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.035973s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.124277s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.071776s ]
+INFO: [ app_end ] --END-- [ RunTime:0.071943s ]
+
+[ 2018-04-09T22:57:05+08:00 ] 127.0.0.1 /Index.php/Home/Login/enlogincl.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000824s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001556s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001704s ]
+
+[ 2018-04-09T22:57:09+08:00 ] 127.0.0.1 /Index.php/Home/Login/login/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000971s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001996s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002191s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000141s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000312s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.046418s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.046600s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001320s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.001374s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002930s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001547s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001702s ]
+
+[ 2018-04-09T22:57:12+08:00 ] 127.0.0.1 /Index.php/Home/Login/logincl.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000817s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001558s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001711s ]
+SQL: SHOW COLUMNS FROM `jk_user` [ RunTime:0.2852s ]
+SQL: SELECT * FROM `jk_user` WHERE `UE_account` = '15515551555' LIMIT 1   [ RunTime:0.0449s ]
+NOTIC: [8] Use of undefined constant ue_id - assumed 'ue_id' D:\wamp64\www\zhangfusheng\kuang\WWW\User\Home\Controller\LoginController.class.php 第 796 行.
+NOTIC: [8] Use of undefined constant ue_account - assumed 'ue_account' D:\wamp64\www\zhangfusheng\kuang\WWW\User\Home\Controller\LoginController.class.php 第 797 行.
+NOTIC: [8] Use of undefined constant ue_account - assumed 'ue_account' D:\wamp64\www\zhangfusheng\kuang\WWW\User\Home\Controller\LoginController.class.php 第 801 行.
+SQL: SHOW COLUMNS FROM `jk_drrz` [ RunTime:0.1964s ]
+SQL: INSERT INTO `jk_drrz` (`date`,`ip`,`user`,`leixin`) VALUES ('2018-04-09 22:57:12','','15515551555','0') [ RunTime:0.0206s ]
+
+[ 2018-04-09T22:57:12+08:00 ] 127.0.0.1 /index.php/Home/Myuser/ssgh/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000862s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001556s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001725s ]
+SQL: SHOW COLUMNS FROM `jk_system` [ RunTime:0.0522s ]
+SQL: SELECT * FROM `jk_system` WHERE `SYS_ID` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `jk_user` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `jk_user` WHERE `UE_ID` = 1 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `jk_ppdd` [ RunTime:0.0599s ]
+SQL: SELECT * FROM `jk_ppdd` WHERE `g_user` = '15515551555' AND `zt` = 1 LIMIT 1   [ RunTime:0.0082s ]
+SQL: SELECT * FROM `jk_ppdd` WHERE `g_user` = '15515551555' AND `zt` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT * FROM `jk_user` WHERE `UE_account` = '15515551555' LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `jk_ppdd` SET `zt`='0',`jydate`='',`g_name`='',`g_user`='',`g_level`='',`g_id`='' WHERE `g_user` = '15515551555' AND `zt` = 1 [ RunTime:0.0099s ]
+NOTIC: [8] Use of undefined constant date - assumed 'date' D:\wamp64\www\zhangfusheng\kuang\WWW\User\Home\Controller\CommonController.class.php 第 88 行.
+SQL: SHOW COLUMNS FROM `jk_date` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `jk_date` WHERE `date` = 1523203230 LIMIT 1   [ RunTime:0.0136s ]
+SQL: SELECT * FROM `jk_user` WHERE `UE_account` = '15515551555' LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `jk_ghgl` [ RunTime:0.0063s ]
+SQL: SELECT * FROM `jk_ghgl` WHERE `uid` = '1' LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: ssghgl D:\wamp64\www\zhangfusheng\kuang\WWW\User\Home\Controller\MyuserController.class.php 第 420 行.
+SQL: SELECT * FROM `jk_user` WHERE ( UE_ID in (0) ) AND `ktghgl` = 2 AND `UE_ID` <> '1' ORDER BY UE_ID desc LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `jk_ghgl` WHERE `uid` = null LIMIT 1   [ RunTime:0.0184s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000170s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000329s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.078180s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.078368s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001695s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.001382s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003327s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001546s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001700s ]
+
+[ 2018-04-09T22:57:16+08:00 ] 127.0.0.1 /Index.php/Home/Index/Index/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001300s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001553s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001725s ]
+SQL: SHOW COLUMNS FROM `jk_userget` [ RunTime:0.0119s ]
+NOTIC: [8] Use of undefined constant wakuang - assumed 'wakuang' D:\wamp64\www\zhangfusheng\kuang\WWW\User\Home\Controller\IndexController.class.php 第 15 行.
+SQL: SELECT * FROM `jk_userget` WHERE `UG_account` = '15515551555' AND `UG_dataType` = 'wakuang' ORDER BY UG_ID DESC  [ RunTime:0.0141s ]
+SQL: SHOW COLUMNS FROM `jk_user` [ RunTime:0.0019s ]
+SQL: SELECT * FROM `jk_user` WHERE `UE_account` = '15515551555' LIMIT 1   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000156s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000320s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.042592s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.042768s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001521s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.001992s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003826s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001564s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001719s ]
+
+[ 2018-04-09T22:57:20+08:00 ] 127.0.0.1 /Index.php/Home/Info/tuiguangma/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000782s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001580s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001748s ]
+SQL: SHOW COLUMNS FROM `jk_system` [ RunTime:0.0016s ]
+SQL: SELECT * FROM `jk_system` WHERE `SYS_ID` = 1 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `jk_user` [ RunTime:0.0105s ]
+SQL: SELECT * FROM `jk_user` WHERE `UE_ID` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `jk_ppdd` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `jk_ppdd` WHERE `g_user` = '15515551555' AND `zt` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `jk_ppdd` WHERE `g_user` = '15515551555' AND `zt` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `jk_user` WHERE `UE_account` = '15515551555' LIMIT 1   [ RunTime:0.0007s ]
+SQL: UPDATE `jk_ppdd` SET `zt`='0',`jydate`='',`g_name`='',`g_user`='',`g_level`='',`g_id`='' WHERE `g_user` = '15515551555' AND `zt` = 1 [ RunTime:0.0005s ]
+NOTIC: [8] Use of undefined constant date - assumed 'date' D:\wamp64\www\zhangfusheng\kuang\WWW\User\Home\Controller\CommonController.class.php 第 88 行.
+SQL: SHOW COLUMNS FROM `jk_date` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `jk_date` WHERE `date` = 1523203230 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: name D:\wamp64\www\zhangfusheng\kuang\WWW\User\Home\Controller\InfoController.class.php 第 843 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000124s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000297s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.045512s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.045790s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001746s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.002067s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004114s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001681s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001842s ]
+
+[ 2018-04-09T22:58:19+08:00 ] 127.0.0.1 /index.php/Home/User/reg/uid/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000672s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001943s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002183s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000139s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000298s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.133781s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.133992s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000766s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.001086s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002085s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001955s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002481s ]
+

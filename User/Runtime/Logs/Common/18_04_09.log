@@ -1,0 +1,84 @@
+[ 2018-04-09T16:55:17+08:00 ] 127.0.0.1 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000651s ]
+ERR: 无法加载模块:Http:
+
+[ 2018-04-09T17:29:36+08:00 ] 127.0.0.1 /reg/s/login.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000058s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001428s ]
+ERR: 无法加载模块:Http:
+
+[ 2018-04-09T17:29:52+08:00 ] 127.0.0.1 /Public/reg/s/login.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000060s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001162s ]
+ERR: 无法加载模块:Http:
+
+[ 2018-04-09T17:31:29+08:00 ] 127.0.0.1 /reg/s/login.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000063s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001215s ]
+ERR: 无法加载模块:Http:
+
+[ 2018-04-09T17:31:29+08:00 ] 127.0.0.1 /reg/s/login.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000670s ]
+ERR: 无法加载模块:Http:
+
+[ 2018-04-09T17:31:40+08:00 ] 127.0.0.1 /Public/web/fonts/fontawesome-webfont.woff2?v=4.5.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000815s ]
+ERR: 无法加载模块:Http:
+
+[ 2018-04-09T17:31:53+08:00 ] 127.0.0.1 /Public/web/fonts/fontawesome-webfont.woff2?v=4.5.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000062s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001508s ]
+ERR: 无法加载模块:Http:
+
+[ 2018-04-09T17:32:10+08:00 ] 127.0.0.1 /Public/web/fonts/fontawesome-webfont.woff2?v=4.5.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000112s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001807s ]
+ERR: 无法加载模块:Http:
+
+[ 2018-04-09T22:57:02+08:00 ] 127.0.0.1 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001186s ]
+ERR: 无法加载模块:Http:
+
+[ 2018-04-09T22:57:09+08:00 ] 127.0.0.1 /reg/s/login.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000061s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001230s ]
+ERR: 无法加载模块:Http:
+
+[ 2018-04-09T22:57:09+08:00 ] 127.0.0.1 /reg/s/login.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000804s ]
+ERR: 无法加载模块:Http:
+
+[ 2018-04-09T22:57:13+08:00 ] 127.0.0.1 /Public/web/fonts/fontawesome-webfont.woff2?v=4.5.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000055s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000958s ]
+ERR: 无法加载模块:Http:
+
+[ 2018-04-09T22:57:17+08:00 ] 127.0.0.1 /Public/web/fonts/fontawesome-webfont.woff2?v=4.5.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001020s ]
+ERR: 无法加载模块:Http:
+
+[ 2018-04-09T22:57:21+08:00 ] 127.0.0.1 /Public/web/fonts/fontawesome-webfont.woff2?v=4.5.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000055s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001240s ]
+ERR: 无法加载模块:Http:
+
