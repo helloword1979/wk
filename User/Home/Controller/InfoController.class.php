@@ -822,7 +822,7 @@ class InfoController extends CommonController {
     }
 	public function tuiguangma(){
 		header ( "Content-type: text/html; charset=utf-8" );
-		$url = 'http://' . $_SERVER['HTTP_HOST'] . u('index.php/Home/User/reg', array('uid'=>session ( 'uid' )));
+		$url = 'http://' . $_SERVER['HTTP_HOST'] . 'index.php/Home/User/reg?uid='.session ( 'uid' );
 		 Vendor('phpqrcode.phpqrcode');
         //生成二维码图片
         $object = new \QRcode();
