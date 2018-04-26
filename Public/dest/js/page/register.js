@@ -85,6 +85,8 @@ function register(data) {
             if (result.code == 0) {
                 alert('注册成功');
                 window.location.href='/index.php/Home/Index/Index/';
+            }else{
+                alert(result.msg);
             }
         },
         error : function() {
@@ -115,8 +117,13 @@ function changeRemainTime() {
         remain_time--;
         if (!remain_time) {
             clearInterval(sms_timer);
-             $("#sms_code").html('重新获取');
+             remain_time=70;
         }
-        $("#sms_code").html(remain_time + '秒');
+        if(remain_time==70){
+            $("#sms_code").html('重新获取');
+        }else{
+           $("#sms_code").html(remain_time + '秒'); 
+        }
+        
      }, 1000)
 }
