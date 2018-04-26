@@ -99,7 +99,7 @@ function getSmsCode(number) {
         type: "POST",//方法类型
         dataType: "json",//预期服务器返回的数据类型
         url: "/Index.php/Home/Ajax/xgzlmobile" ,//url
-        data: {phone: number},
+        data: {mobile: number},
         success: function (result) {
             alert("success");
         },
