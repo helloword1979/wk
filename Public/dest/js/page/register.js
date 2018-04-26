@@ -84,7 +84,7 @@ function register(data) {
             // alert("success");
             if (result.code == 0) {
                 alert('注册成功');
-                window.location.href='/index.php/Home/Index/Index/';
+                window.location.href='/index.php/Home/Login/Index/';
             }else{
                 alert(result.msg);
             }
