@@ -339,7 +339,6 @@ class InfoController extends CommonController {
 	public function myziliao(){
 		$user=M('user')->where(array('UE_account'=>$_SESSION['uname']))->select();
 
-		var_dump($user);
 		$users=M('user')->where(array('UE_account'=>$_SESSION['uname']))->find();
 		if($users['phone']==""){
 			$yzm=1;
