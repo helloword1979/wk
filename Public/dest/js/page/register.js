@@ -117,9 +117,9 @@ function changeRemainTime() {
         remain_time--;
         if (!remain_time) {
             clearInterval(sms_timer);
-             remain_time=70;
+             remain_time=60;
         }
-        if(remain_time==70){
+        if(remain_time==60){
             $("#sms_code").html('重新获取');
         }else{
            $("#sms_code").html(remain_time + '秒'); 
