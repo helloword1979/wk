@@ -101,7 +101,8 @@ function getSmsCode(number) {
         url: "/Index.php/Home/Ajax/xgzlmobile" ,//url
         data: {mobile: number},
         success: function (result) {
-            alert("success");
+            alert("发送成功");
+            changeRemainTime();
         },
         error : function() {
             alert("异常！");
