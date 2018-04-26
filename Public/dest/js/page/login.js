@@ -22,7 +22,7 @@ $(document).ready(function(){
     });
 
     $("#register").click(function(){
-        alert("register");
+        alert("暂未开放");
     });
 });
 

@@ -31,7 +31,7 @@ $(document).ready(function(){
         // ....
         
         // TODO 发送注册请求成功后跳转.
-        // register();
+        register(param);
 
     });
     $("#sms_code").click(function() {
@@ -115,7 +115,7 @@ function changeRemainTime() {
         remain_time--;
         if (!remain_time) {
             clearInterval(sms_timer);
-            remain_time = 60;
+             $("#sms_code").html('重新获取');
         }
         $("#sms_code").html(remain_time + '秒');
      }, 1000)
