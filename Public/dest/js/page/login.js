@@ -14,7 +14,7 @@ $(document).ready(function(){
         if (!pwd) {
             return alert("请输入密码");
         }
-        param.username = $("#username").val();
+        param.account = $("#username").val();
         param.password = $("#password").val();
         // 当前打印的是用户名与密码
         console.log("param", param);
@@ -31,10 +31,14 @@ function login(data) {
     $.ajax({
         type: "POST",//方法类型
         dataType: "json",//预期服务器返回的数据类型
-        url: "/users/login" ,//url
+        url: "/Index.php/Home/Login/logincl" ,//url
         data: data,
         success: function (result) {
-            alert("success");
+            if (result.status== 1) {
+                location.href="/index.php/Home/Index/index/"
+            }else{
+                alert(result.msg);
+            }
         },
         error : function() {
             alert("异常！");

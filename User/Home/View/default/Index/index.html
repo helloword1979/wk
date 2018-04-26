@@ -3,9 +3,9 @@
        
         <link rel="stylesheet" type="text/css" href="__PUBLIC__/dest/css/reset.css">
         <link rel="stylesheet" type="text/css" href="__PUBLIC__/dest/css/global.css">
-        <link rel="stylesheet" type="text/css" href="__PUBLIC__/dest/css/self.css">
-        <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_640143_x1bjus81mdqxs9k9.css">
-        <title>生命树</title>
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/dest/css/home.css">
+        <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_640143_35nn4j5xparwwmi.css">
+        <title>home</title>
         <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -15,98 +15,86 @@
 </head>
 <!-- 个人中心的容器 start -->
 <body id="self">
-    <div class="self_wrap">
-        <!-- 个人信息 start -->
-        <div class="self-info">
-            <div class="part-one">
-                <div class="avatar">
-                    <img src="https://ss0.baidu.com/73F1bjeh1BF3odCf/it/u=3649938864,1500395600&fm=85&s=DBB32AC52C5316C64C01F313030090E7">
+    <div class="self_wrap home">
+        <!-- banner start -->
+        <div class="banner"></div>
+        <!-- banner end -->
+        <!-- 通知 -->
+        <div class="notices wrap-padding">
+            <div layout="rows stretch-justify">
+                <div class='left-icon'>
+                    <span class="iconfont icon-laba001hover"></span>
                 </div>
-                <div class="name_phone">
-                    <p>{$nickname}</p>
-                    <p>{$UG_account}</p>
-                </div>
+                <div self="size-x1" class='content'>2018年5月20日生命树项目将全面启动</div>
             </div>
-            <div class="part-two clear">
-                <p class="title">可用积分(分)</p>
-                <p class="number">100.00</p>
-            </div>
-            <div class="part-three" layout="rows center-justify">
-                <div self="size-x1" class="item">
-                    <p class="title">流通的生命数(棵)</p>
-                    <p class="number">1000.00</p>
-                </div>
-                <div self="size-x1" class="item">
-                    <p class="title"> 储存的生命树(棵)</p>
-                    <p class="number">1000.00</p>
+        </div>
+        <!-- 通知结束 -->
+
+        <!-- 转换比率 start-->
+        <div class="transfer-rate wrap-padding">
+           <div layout="rows center-center" style="height: 100%">
+                <div>
+                    <p class="title">实时积分兑换生命树比率</p>
+                    <p class="number">8888</p>
                 </div>
             </div>
         </div>
-        <!-- 个人信息 end -->
-        <!-- 导航区菜单 start -->
-        <div class="nav-items">
-            <div layout="row center-center" class="item-row">
-                <div self="size-x1" class="item-row_child" onClick="jump('abcdeg')">
-                    <span class="iconfont icon-qianbao"></span>
-                    <div class="title">我的钱包</div>
-                </div>
-                <div self="size-x1" class="item-row_child" onClick="jump('abcdeg')">
-                    <span class="iconfont icon-licaishouyi"></span>
-                    <div class="title">我的理财</div>
-                </div>
-                <div self="size-x1" class="item-row_child" onClick="jump('abcdeg')">
-                    <span class="iconfont icon-fenxiang"></span>
-                    <div class="title">我的推广</div>
-                </div>
-            </div>
-            <div layout="row center-center" class="item-row">
-                <div self="size-x1" class="item-row_child" onClick="jump('abcdeg')">
-                    <span class="iconfont icon-tubiaolunkuo-"></span>
-                    <div class="title">银行卡</div>
-                </div>
-                <div self="size-x1" class="item-row_child" onClick="jump('/Index.php/Home/info/zhuanrang/')">
-                    <span class="iconfont icon-jiaoyi"></span>
-                    <div class="title">生命树转出</div>
-                </div>
-                <div self="size-x1" class="item-row_child" onClick="jump('abcdeg')">
-                    <span class="iconfont icon-unie637"></span>
-                    <div class="title">积分兑换</div>
-                </div>
-            </div>
-            <div layout="row center-center" class="item-row">
-                <div self="size-x1" class="item-row_child" onClick="jump('abcdeg')">
-                    <span class="iconfont icon-shezhi"></span>
-                    <div class="title">安全设置</div>
-                </div>
-                <div self="size-x1" class="item-row_child" onClick="jump('abcdeg')">
-                    <span class="iconfont icon-kefu"></span>
-                    <div class="title">客服</div>
-                </div>
-                <div self="size-x1" class="item-row_child" onClick="jump('abcdeg')">
-                    <span class="iconfont icon-wenti"></span>
-                    <div class="title">常见问题</div>
-                </div>
-            </div>
-        </div>
-        <div class="phone">
-            <a class="number" href="tel:400-1881-905">400-1881-905</a>
+        <!-- 转换比率 end-->
+
+
+        <div class='info wrap-padding'>
+            <ul>
+                <li class="item blue">
+                    <div class='left-img'>
+                        <img src='__PUBLIC__/dest/image/home_blue-left.png' />
+                    </div>
+                    <div layout="rows center-right" class="rows">
+                        <div>
+                            <p>可用积分<span class="left-bracket">(</span>分<span class="right-bracket">)</span></p>
+                            <p class='number'>1000</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="item green">
+                    <div class='left-img'>
+                        <img src='__PUBLIC__/dest/image/home_green-left.png' />
+                    </div>
+                    <div layout="rows center-right" class="rows">
+                        <div>
+                            <p>流通的生命树<span class="left-bracket">(</span>棵<span class="right-bracket">)</span></p>
+                            <p class='number'>1000</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="item purple">
+                    <div class='left-img'>
+                        <img src='__PUBLIC__/dest/image/home_purple-left.png' />
+                    </div>
+                    <div layout="rows center-right" class="rows">
+                        <div>
+                            <p>储存的生命树<span class="left-bracket">(</span>分<span class="right-bracket">)</span></p>
+                            <p class='number'>1000</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
         </div>
         <!-- 导航区菜单 end -->
         <!-- 个人中心底部菜单 start -->
 <div layout="row center-justify" id="foot-bar">
-    <div self="size-x1" class="item" >
+    <div self="size-x1" class="item active" onclick="jump('/Index.php/Home/index/index/">
         <span class="iconfont icon-home"></span>
         <div class="title">首页</div>
     </div>
-    <div self="size-x1" class="item" >
+    <div self="size-x1" class="item" onclick="jump('building.html')">
         <span class="iconfont icon-jiaoyi"></span>
         <div class="title">交易</div>
     </div>
-    <div self="size-x1" class="item" >
+    <div self="size-x1" class="item" onclick="jump('building.html')">
         <span class="iconfont icon-fenxiang"></span>
         <div class="title">分享</div>
     </div>
-    <div self="size-x1" class="item active" >
+    <div self="size-x1" class="item" onclick="jump('/Index.php/Home/info/myziliao/')">
         <span class="iconfont icon-user"></span>
         <div class="title">我的</div>
     </div>
@@ -120,5 +108,5 @@
 
 <script src="__PUBLIC__/dest/js/lib/jquery-3.3.1.min.js"></script>
 <script src="__PUBLIC__/dest/js/lib/global.js"></script>
-<script src="__PUBLIC__/dest/js/page/self.js"></script>
+<script src="__PUBLIC__/dest/js/page/home.js"></script>
 </html>

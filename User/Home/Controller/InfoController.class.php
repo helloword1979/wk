@@ -108,6 +108,8 @@ class InfoController extends CommonController {
 		$this->assign('jrzd',$jrzd);
 		$this->display("info/index");
 	}
+
+
 	public function enindex() {
 		$settings = include( dirname( APP_PATH ) . '/User/Home/Conf/settings.php' );
 		//die("<script>alert('Yet open');history.back(-1);</script>");
@@ -333,7 +335,7 @@ class InfoController extends CommonController {
 
 		$this->display();
 	}
-	
+	// 个人中心
 	public function myziliao(){
 		$user=M('user')->where(array('UE_account'=>$_SESSION['uname']))->select();
 		$users=M('user')->where(array('UE_account'=>$_SESSION['uname']))->find();

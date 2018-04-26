@@ -695,7 +695,7 @@ class LoginController extends Controller {
 					$user=M('user')->where(['UE_account'=>$username])->find();
 				if(!$user || $user['ue_password']!=md5($pwd)){ 
 					$arr['status']=0;
-					$arr['msg']="账号或密码错误666！";
+					$arr['msg']="账号或密码错误！";
 					$this->ajaxReturn($arr);
 					//die("<script>alert('账号或密码错误,或被禁用！');history.back(-1);</script>");
 				}elseif($user['ue_status']=='3'){
