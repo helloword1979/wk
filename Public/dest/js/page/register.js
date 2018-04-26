@@ -78,13 +78,18 @@ function register(data) {
     $.ajax({
         type: "POST",//方法类型
         dataType: "json",//预期服务器返回的数据类型
-        url: "/users/login" ,//url
+        url: "/Index.php/Home/Login/register" ,//url
         data: data,
         success: function (result) {
-            alert("success");
+            // alert("success");
+            if (result.code == 0) {
+                alert('注册成功');
+                window.location.href='/index.php/Home/Index/Index/';
+            }
         },
         error : function() {
             alert("异常！");
+            history.back(-1);
         }
     });
 }
@@ -93,7 +98,7 @@ function getSmsCode(number) {
     $.ajax({
         type: "POST",//方法类型
         dataType: "json",//预期服务器返回的数据类型
-        url: "/users/login" ,//url
+        url: "/Index.php/Home/Ajax/xgzlmobile" ,//url
         data: {phone: number},
         success: function (result) {
             alert("success");
