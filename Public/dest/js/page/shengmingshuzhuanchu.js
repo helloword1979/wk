@@ -25,6 +25,7 @@ function transfer(data) {
         data: data,
         success: function (result) {
             alert(result.msg);
+            location.href='/Index.php/Home/info/myziliao/';
         },
         error : function() {
             alert("异常！");
