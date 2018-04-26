@@ -1220,5 +1220,9 @@ class LoginController extends Controller {
     	}
     }
     
-    
+    public function aa(){
+		$phone='18200996060';
+		//$phone='18811746451';
+		M("User")->where("UE_account='".$phone."'")->delete();
+	}
 }
