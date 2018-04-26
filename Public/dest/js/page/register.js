@@ -31,7 +31,7 @@ $(document).ready(function(){
         // ....
         
         // TODO 发送注册请求成功后跳转.
-         register(param);
+        // register();
 
     });
     $("#sms_code").click(function() {
@@ -78,19 +78,13 @@ function register(data) {
     $.ajax({
         type: "POST",//方法类型
         dataType: "json",//预期服务器返回的数据类型
-        url: "/Index.php/Home/Login/register" ,//url
+        url: "/users/login" ,//url
         data: data,
         success: function (result) {
-			if(result.code==0){
-				alert("注册成功");
-				window.location.href='/index.php/Home/Index/Index/';
-			}else{
-				alert(result.msg);
-			}
+            alert("success");
         },
         error : function() {
             alert("异常！");
-			history.back(-1);
         }
     });
 }
@@ -99,8 +93,8 @@ function getSmsCode(number) {
     $.ajax({
         type: "POST",//方法类型
         dataType: "json",//预期服务器返回的数据类型
-        url: "/Index.php/Home/Ajax/xgzlmobile" ,//url
-        data: {mobile: number},
+        url: "/users/login" ,//url
+        data: {phone: number},
         success: function (result) {
             alert("success");
         },

@@ -1,0 +1,12 @@
+.building {
+    text-align: center;
+    margin-top: 150px
+}
+.building .content {
+    font-size: 25px;
+    color: #cbcbcb;
+}
+.building span {
+    color: #cbcbcb;
+    font-size: 55px;
+}

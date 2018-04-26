@@ -1,0 +1,88 @@
+.home .wrap-padding {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+.home .banner {
+        background: url(../image/banner_01.jpg) no-repeat center;
+        height: 180px;
+        background-size: 100% 100%;
+}
+.home .notices {
+        background: white;
+        height: 30px;
+        line-height: 30px;
+}
+.home .notices .left-icon .iconfont {
+        font-size: 18px;
+        color: #4c8eff;
+}
+.home .notices .content {
+        color: #5e5e5e;
+        font-size: 12px;
+        margin-left: 8px;
+}
+.home .transfer-rate {
+        background: white;
+        height: 110px;
+        text-align: center;
+}
+.home .transfer-rate p {
+            margin: 0;
+}
+.home .transfer-rate .title {
+        font-size: 20px;
+        letter-spacing: 1px;
+        color: #4d4d4d;
+}
+.home .transfer-rate .number {
+        color: #5494fe;
+        letter-spacing: 3px;
+        font-size: 25px;
+}
+.home .info .item {
+        height: 75px;
+        border-radius: 10px;
+        margin-top: 10px;
+        background: green;
+        position: relative;
+}
+.home .info .item .left-img {
+        position: absolute;
+}
+.home .info .item .left-img img {
+        height: 75px;
+        width: auto;
+}
+.home .info .item .rows {
+        text-align: right;
+        padding-right: 16px;
+        color: white;
+        height: 100%;
+}
+.home .info .item .rows .left-bracket {
+        margin: 0 5px 0 10px;
+}
+.home .info .item .rows .right-bracket {
+        margin: 0 5px 0 5px;
+}
+.home .info .item .rows .number {
+        font-size: 14px;
+        letter-spacing: 2px;
+}
+.home .info .item.blue {
+        background: url('../image/home_blue.jpg');
+}
+.home .info .item.green {
+        background-color: #37caa8;
+}
+.home .info .item.green img {
+        height: 60px;
+        margin: 8px 0 3px 20px;
+}
+.home .info .item.purple {
+        background-color: #6672d9;
+}
+.home .info .item.purple img {
+        height: 60px;
+        margin: 10px 0 0 38px;
+}

@@ -1,173 +1,51 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<link type="text/css" rel="stylesheet" href="__PUBLIC__/web/css/lib.css?2">
-	<link rel="stylesheet" href="__PUBLIC__/web/js/morris.css">
-	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
-	<meta content="telephone=no" name="format-detection">
-	<title>转让生命树</title>
-	<script src="__PUBLIC__/web/js/jquery-1.8.3.min.js"></script>
-	<link rel="stylesheet" href="__PUBLIC__/web/css/weui.min.css"/>
-	<link rel="stylesheet" href="__PUBLIC__/web/css/jquery-weui.min.css">
-	<link href="__PUBLIC__/web/css/font-awesome.min.css" rel="stylesheet">
-	<link href="__PUBLIC__/web/fonts/iconfont.css" rel="stylesheet">
-	<script src="__PUBLIC__/web/js/layer.js"></script>
-	<link rel="stylesheet" href="__PUBLIC__/web/css/style.css"/>
-	<style>
-        #chartNav{
-		display:none;
-            width: 100%;
-            height: 30px;
-            background: #EFEFF4;
-        }
-        #chartNav a{
-            float: left;
-            width: 100%;
-            line-height: 30px;
-            -ms-text-align-last: center;
-            text-align-last: center;
-			text-align:center;
-            color: #666666;
-        }
-        #chartNav a:hover,#chartNav a.active{
-            background: #05B6A3;
-            color: #fff;
-            -webkit-transform: all 0.3s;
-            -moz-transform: all 0.3s;
-            -ms-transform: all 0.3s;
-            -o-transform: all 0.3s;
-            transform: all 0.3s;
-        }
-		 #myhend{
-            width: 100%;
-            height: 40px;
-            overflow: hidden;
-            border-bottom:1px solid #ddd;
-            color: #767676;
-        }
-        #myhend>div{
-            float: left;
-            width:calc( 50% - 10px );
-            text-align: left;
-            height:100%;
-            line-height: 40px;
-            font-size: 16px;
-            font-weight: 600;
-			padding-left:0;
-			padding-left:10px;
-        }
-		 #myhend>div:last-child{
-		 text-align:center;
-		 color:#05B6A3;
-		 font-size:24px;
-		 }
-        #myhend>div>p{
-		   float:left;
-            width: 50%;
-            height: 20px;
-            line-height: 20px;
-            font-size: 12px;
-            font-weight: 500;
-        }
-		#mynav{
-			width:100%;
-			height:30px;
-			line-height:30px;
-			border-bottom:1px solid #ddd;
-		}
-		#mynav a{
-			float:left;
-			width:50%;
-			text-align:center;
-			line-height:30px;
-			color:#858585;
-		}
-		#mynav a:hover{
-			transition:all 0.5s;
-			background:#05B6A3;
-			color:#fff;
-		}
-		#mynav a.active{
-			transition:all 0.5s;
-			background:#05B6A3;
-			color:#fff;
-		}
-    </style>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/dest/css/reset.css">
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/dest/css/global.css">
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/dest/css/shengmingshuzhuanchu.css">
+        <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_640143_35nn4j5xparwwmi.css">
+        <title>转出</title>
+        <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
 </head>
-<body>
-	<!--顶部开始-->
-	<header class="header">
-		<span class="header_l"><a href="javascript:history.go(-1);"><i class="fa fa-chevron-left"></i></a></span>
-		<span class="header_c">转让生命树</span>
-		<span style="position: absolute;right: 40px;top: 0px;text-align:center;width:70px;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;font-size: 12px; ">{$userData['ue_truename']}</span>
-		<span class="header_r"><a href="/Index.php/Home/Index/index/"><i class="fa fa-user"></i></a></span>
-	</header>
-	<div class="height40"></div>
-	<div id="qiugou" style="padding-bottom:100px;background-color:#fff;margin-top:-10px;width:100%;margin-left:0%">
-	<form  id="qiugou" class="mmform" style="margin-top: 25px" action="/Index.php/Home/Info/zrsms" method= "POST" onsubmit="return false" >
-		<input type="text" name="lkb" id="gmsl" placeholder="请输入要转让数量" onpaste="this.value=this.value.replace(/[^\d]/g,'')" onkeyup="this.value=this.value.replace(/[^\d]/g,'')"
- style="width:60%"/>
-		<input type="text" name="name" id="mmp" placeholder="请输入转让账号"style="width:60%" />
-		
-	
-		<button type="submit" id="mmm" style="float:right;width:33%;margin-top:-40px;background-color: #05B6A3;height: 30px;line-height: 30px;background-color: #05B6A3;height: 30px;line-height: 30px;border-radius:5px;border:0px;color:#fff">转让</button>
-		<button type="reset" id="mmms" style="float:right;width:33%;margin-top:0px;background-color: #05B6A3;height: 30px;line-height: 30px;background-color: #05B6A3;height: 30px;line-height: 30px;border-radius:5px;border:0px;color:#fff">重置</button>
-	</form>
-	</div>
-<style>
-	.footer ul li{
-		width: 25%;
-	}
-</style>
-		<div class="footer">
-      <ul>
-        <li style="width:50%"><a href="/Index.php/Shop/Index/" class="block"><i class="iconfont">&#xe604;</i>商城</a></li>
-		<!-- <li><a href="/Index.php/Home/Info/mykuangche/" class="block"><i class="iconfont">&#xe601;</i>我的矿机</a></li> -->
-		<!-- <li><a href="/Index.php/Home/Info/Index/" class="block"><i class="iconfont">&#xe645;</i>交易中心</a></li> -->
-        <li style="width:49%" ><a href="/Index.php/Home/Index/Index/" class="block"><i class="iconfont">&#xe684;</i>钱包</a></li>
-    </ul>
-</div>
-	
-	
-	
-	
-	
-<script src="__PUBLIC__/user2/js/jquery.dataTables.min.js"></script>
-<script src="__PUBLIC__/user2/js/dataTables.bootstrap.min.js"></script>
-<script src="__PUBLIC__/user2/js/jQuery-2.1.4.min.js"></script>
-<script src="__PUBLIC__/web/js/echarts.min.js"></script>
-<script src="__PUBLIC__/chart/mychart.js"></script>
-<script src="__PUBLIC__/user2/js/bootstrap.min.js"></script>
-<script src="__PUBLIC__/user2/js/morris.min.js"></script>
-<script src="__PUBLIC__/user2/js/raphael-min.js"></script>
-	<!--底部结束-->
-<script src="__PUBLIC__/web/js/jquery-weui.min.js"></script>
-	
-<script type="text/javascript">
-$(function(){
-	$("#mmm").bind("click",function(){
-		$.showLoading("正在提交");
-			$.ajax({
-			url:"/Index.php/Home/Info/zrsms",
-			type:"post",
-			 data:$(".mmform").serialize(),
-			 dataType:"json",
-			 success:function(data){
-				if(data.code==0){
-				   $.alert(data.msg,function(){
-				   location.href="/Index.php/Home/index/index/";
-				   })
-				}else{
-					$.alert(data.msg);
-				}
-			  }
-			})
-	})
-})
-</script>
-<p style="display:none;">
-<script src="http://s95.cnzz.com/z_stat.php?id=1261438452&web_id=1261438452" language="JavaScript"></script>
-</p>
+<body id="self">
+    <div id="nav-title">
+        <span class="iconfont icon-Left back" onclick="jump('self.html')"></span>
+        生命数转出
+    </div>
+    <div class="head-info global_padding nav-title__padding">
+       <div class='bottom'>
+            <p class='title'>可转出生命树<span style="margin:0 5px 0 10px;">(</span>颗<span style="margin:0 5px;">)</span></p>
+            <p class='number'>{$life_tree['life_tree']}</p>
+       </div>
+    </div>
+    <div class="weui-cells form" id="form">
+        <div class="weui-cell">
+            <div class="weui-cell__bd">
+                <input class="weui-input" type="number" name="number" placeholder="请输入要转出的数量">
+            </div>
+        </div>
+        <div class="weui-cell">
+            <div class="weui-cell__bd">
+                <input class="weui-input" type="text" name="account" placeholder="请输入对方钱包账户">
+            </div>
+        </div>
+        <div class="weui-cell">
+            <div class="weui-cell__bd">
+                <input class="weui-input" type="password" name="secretpwd" placeholder="请输入交易密码">
+            </div>
+        </div>
+    </div>
+    <div id="confirm">
+         <button type="button" class="btn  blue" style="width: 285px;" id="submit">立刻转出</button>
+    </div>
 </body>
+<!-- 个人中心的容器 end -->
+<script src="__PUBLIC__/dest/js/lib/jquery-3.3.1.min.js"></script>
+<script src="__PUBLIC__/dest/js/lib/global.js"></script>
+<script src="__PUBLIC__/dest/js/page/shengmingshuzhuanchu.js"></script>
 </html>

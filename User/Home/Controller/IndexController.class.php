@@ -7,13 +7,18 @@ use Think\Controller;
 class IndexController extends Controller {
 	// 首页
 	public function index() {
+		header("Content-type:text/html;charset=utf-8");
 		I('post.help', '', I('get.i'));
 		if(! isset ( $_SESSION ['uid'] )){
 			$this->redirect ( '/Index.php/Home/Login/index' );
 		}
 
 		$result= M('userget')->where(array('UG_account'=>$_SESSION['uname'],'UG_dataType'=>wakuang))->order('UG_ID DESC')->select();
-		
+
+		// echo '<pre>';
+		// var_dump($result);
+		// echo '<hr>';
+		// var_dump($_SESSION);
 		$this->assign('list',$result);
 		//dump($result);die();
 		$oob=M('user')->where(array('UE_account'=>$_SESSION['uname']))->find();

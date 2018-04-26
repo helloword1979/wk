@@ -1,145 +1,124 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<link type="text/css" rel="stylesheet" href="__PUBLIC__/web/css/lib.css?2">
-	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1, minimum-scale=1.0"/>
-	<meta content="telephone=no" name="format-detection">
-	<title>钱包</title>	
-    <script src="__PUBLIC__/web/js/jquery-1.8.3.min.js"></script>
-    <link rel="stylesheet" href="__PUBLIC__/web/css/weui.min.css"/>
-	<link rel="stylesheet" href="__PUBLIC__/web/css/jquery-weui.min.css">
-	<link href="__PUBLIC__/web/css/font-awesome.min.css" rel="stylesheet">
-	<link href="__PUBLIC__/web/fonts/iconfont.css" rel="stylesheet">
-	<script src="__PUBLIC__/web/js/layer.js"></script>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+       
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/dest/css/reset.css">
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/dest/css/global.css">
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/dest/css/self.css">
+        <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_640143_x1bjus81mdqxs9k9.css">
+        <title>生命树</title>
+        <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
 </head>
-<body>
-	<!--顶部开始-->
-	<div class="header">
-		<span class="header_l"><a href="javascript:history.go(-1);"><i class="fa fa-chevron-left"></i></a></span>
-		<span class="header_c">钱包</span>
-		<span style="position: absolute;right: 10%;top: 0px;text-align:center;width:20%;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;font-size: 12px; ">{$nickname}</span>
-		<span class="header_r"><a href="javascript:void(0)"><i class="fa fa-user"></i></a></span>
-	</div>
-	<div class="height40"></div>
-	<!--顶部结束-->
-<style>
-	.user_sy li{
-		width: 33.3%;
-	}
-</style>
-	<div style="background-color: #06C1AE ;padding: 20px 0px;  width: 95%;overflow: hidden;color: #FFFFFF;font-size:1.5em;padding-right:5%">
-		<a href="{:U('/index.php/Home/Login/logout')}" style="position:absolute;top:45px;left:19px;width:100px;height:50px;line-height:50px;text-align:center;color:#fff;font-size:12px">安全退出</a>
-		<div style="width: 95%;float: right;text-align: center;overflow: hidden;text-align:right;"><p style="font-size:12px">可用生命树:</p><p style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;font-size:30px">{$kymoney}</p></div>
-		<!-- <div style="width:95%;float: right;text-align: center;overflow: hidden;text-align:right;"><p style="float:right"><span style="font-size:12px;display:inline-block;">冻结GEC:</span><span style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;float:right;font-size:1em">{$djmoney}</span></p></div> -->
-	</div>
-<div class="weui_grids" style="background-color: #f9f9f9">
-	<!-- <a href="/Index.php/Home/Info/mykuangche/" class="weui_grid js_grid" data-id="toast"> -->
-		<!-- <div class="weui_grid_icon"> -->
-			<!-- <i class="iconfont" style="color: #FE9400;display: block;width: 16px;margin:0 auto;font-size: 2em;margin-left: -2px;">&#xe601;</i> -->
-		<!-- </div> -->
-		<!-- <p class="weui_grid_label" style="margin-top: 12px">我的矿机</p> -->
-	<!-- </a> -->
-	<!-- <a href="/Index.php/Home/Info/myjiaoyi/" class="weui_grid js_grid" data-id="toast"> -->
-		<!-- <div class="weui_grid_icon"> -->
-			<!-- <i class="iconfont" style="color: #F4403C;display: block;width: 16px;margin:0 auto;font-size: 2em;margin-left: -2px;">&#xe63f;</i> -->
-		<!-- </div> -->
-		<!-- <p class="weui_grid_label" style="margin-top: 12px">我的交易</p> -->
-	<!-- </a> -->
-	<!-- <a href="/Index.php/Home/Info/kuangcheshouyi/" class="weui_grid js_grid" data-id="toast"> -->
-	<!-- <div class="weui_grid_icon"> -->
-		<!-- <i class="iconfont" style="color: #7E4BE5;display: block;width: 16px;margin:0 auto;font-size: 2em;margin-left: -2px;">&#xe628;</i> -->
-	<!-- </div> -->
-	<!-- <p class="weui_grid_label" style="margin-top: 12px">矿机收益</p> -->
-<!-- </a> -->
-	<!-- <a href="/Index.php/Home/Info/tgsy/" class="weui_grid js_grid" data-id="toast"> -->
-		<!-- <div class="weui_grid_icon"> -->
-			<!-- <i class="iconfont" style="color: #FEB900;display: block;width: 16px;margin:0 auto;font-size: 2em;margin-left: -2px;">&#xe603;</i> -->
-		<!-- </div> -->
-		<!-- <p class="weui_grid_label" style="margin-top: 12px">公会收益</p> -->
-	<!-- </a> -->
-	<!-- <a href="/Index.php/Home/Myuser/index/" class="weui_grid js_grid" data-id="toast"> -->
-		<!-- <div class="weui_grid_icon"> -->
-			<!-- <i class="iconfont" style="color: #1C91E2;display: block;width: 16px;margin:0 auto;font-size: 2em;margin-left: -2px;">&#xe85d;</i> -->
-		<!-- </div> -->
-		<!-- <p class="weui_grid_label" style="margin-top: 12px">矿工公会</p> -->
-	<!-- </a> -->
-	<!-- <a href="/Index.php/Home/info/qiugoulkc/" class="weui_grid js_grid" data-id="toast"> -->
-		<!-- <div class="weui_grid_icon"> -->
-			<!-- <i class="iconfont" style="color: #e64340;display: block;width: 16px;margin:0 auto;font-size: 2em;margin-left: -2px;">&#xe615;</i> -->
-		<!-- </div> -->
-		<!-- <p class="weui_grid_label" style="margin-top: 12px">求购GEC</p> -->
-	<!-- </a> -->
-
-
-
-	<a href="/Index.php/Home/info/zhuanrang/" class="weui_grid js_grid" data-id="toast">
-		<div class="weui_grid_icon">
-			<i class="iconfont" style="color: #e64340;display: block;width: 16px;margin:0 auto;font-size: 2em;margin-left: -2px;">&#xe63a;</i>
-		</div>
-		<p class="weui_grid_label" style="margin-top: 12px">转让生命树</p>
-	</a> 
-
-
-
-	<a href="/Index.php/Home/Info/tuiguangma/" class="weui_grid js_grid" data-id="toast">
-		<div class="weui_grid_icon">
-			<i class="iconfont" style="color: #09B9F4;display: block;width: 16px;margin:0 auto;font-size: 2em;margin-left: -2px;">&#xe600;</i>
-		</div>
-		<p class="weui_grid_label" style="margin-top: 12px">林场扩建
-		</p>
-	</a>
-	<a href="/Index.php/Home/Info/myziliao/" class="weui_grid js_grid" data-id="toast">
-		<div class="weui_grid_icon">
-			<i class="iconfont" style="color: #F63C86;display: block;width: 16px;margin:0 auto;font-size: 2em;margin-left: -2px;">&#xe684;</i>
-		</div>
-		<p class="weui_grid_label" style="margin-top: 12px">个人资料</p>
-	</a>
-	<a href="/Index.php/Home/Info/mimaguanli/" class="weui_grid js_grid" data-id="toast">
-		<div class="weui_grid_icon">
-			<i class="iconfont" style="color: #A4ABFE;display: block;width: 16px;margin:0 auto;font-size: 2em;margin-left: -2px;">&#xe681;</i>
-		</div>
-		<p class="weui_grid_label" style="margin-top: 12px">密码管理</p>
-	</a>
-	<a href="/Index.php/Home/Info/lianxius/" class="weui_grid js_grid" data-id="toast">
-		<div class="weui_grid_icon">
-			<i class="iconfont" style="color: #A4ABFE;display: block;width: 16px;margin:0 auto;font-size: 2em;margin-left: -2px;">&#xe687;</i>
-		</div>
-		<p class="weui_grid_label" style="margin-top: 12px">联系我们</p>
-	</a>
-	<!-- <a href="/Index.php/Home/Index/help/" class="weui_grid js_grid" data-id="toast"> -->
-			<!-- <div class="weui_grid_icon"> -->
-				<!-- <i class="iconfont" style="color: #15D897;display: block;width: 16px;margin:0 auto;font-size: 2em;margin-left: -2px;">&#xe62e;</i> -->
-			<!-- </div> -->
-			<!-- <p class="weui_grid_label" style="margin-top: 12px">帮助中心</p> -->
-	<!-- </a> -->
+<!-- 个人中心的容器 start -->
+<body id="self">
+    <div class="self_wrap">
+        <!-- 个人信息 start -->
+        <div class="self-info">
+            <div class="part-one">
+                <div class="avatar">
+                    <img src="https://ss0.baidu.com/73F1bjeh1BF3odCf/it/u=3649938864,1500395600&fm=85&s=DBB32AC52C5316C64C01F313030090E7">
+                </div>
+                <div class="name_phone">
+                    <p>{$nickname}</p>
+                    <p>{$UG_account}</p>
+                </div>
+            </div>
+            <div class="part-two clear">
+                <p class="title">可用积分(分)</p>
+                <p class="number">100.00</p>
+            </div>
+            <div class="part-three" layout="rows center-justify">
+                <div self="size-x1" class="item">
+                    <p class="title">流通的生命数(棵)</p>
+                    <p class="number">1000.00</p>
+                </div>
+                <div self="size-x1" class="item">
+                    <p class="title"> 储存的生命树(棵)</p>
+                    <p class="number">1000.00</p>
+                </div>
+            </div>
+        </div>
+        <!-- 个人信息 end -->
+        <!-- 导航区菜单 start -->
+        <div class="nav-items">
+            <div layout="row center-center" class="item-row">
+                <div self="size-x1" class="item-row_child" onClick="jump('abcdeg')">
+                    <span class="iconfont icon-qianbao"></span>
+                    <div class="title">我的钱包</div>
+                </div>
+                <div self="size-x1" class="item-row_child" onClick="jump('abcdeg')">
+                    <span class="iconfont icon-licaishouyi"></span>
+                    <div class="title">我的理财</div>
+                </div>
+                <div self="size-x1" class="item-row_child" onClick="jump('abcdeg')">
+                    <span class="iconfont icon-fenxiang"></span>
+                    <div class="title">我的推广</div>
+                </div>
+            </div>
+            <div layout="row center-center" class="item-row">
+                <div self="size-x1" class="item-row_child" onClick="jump('abcdeg')">
+                    <span class="iconfont icon-tubiaolunkuo-"></span>
+                    <div class="title">银行卡</div>
+                </div>
+                <div self="size-x1" class="item-row_child" onClick="jump('/Index.php/Home/info/zhuanrang/')">
+                    <span class="iconfont icon-jiaoyi"></span>
+                    <div class="title">生命树转出</div>
+                </div>
+                <div self="size-x1" class="item-row_child" onClick="jump('abcdeg')">
+                    <span class="iconfont icon-unie637"></span>
+                    <div class="title">积分兑换</div>
+                </div>
+            </div>
+            <div layout="row center-center" class="item-row">
+                <div self="size-x1" class="item-row_child" onClick="jump('abcdeg')">
+                    <span class="iconfont icon-shezhi"></span>
+                    <div class="title">安全设置</div>
+                </div>
+                <div self="size-x1" class="item-row_child" onClick="jump('abcdeg')">
+                    <span class="iconfont icon-kefu"></span>
+                    <div class="title">客服</div>
+                </div>
+                <div self="size-x1" class="item-row_child" onClick="jump('abcdeg')">
+                    <span class="iconfont icon-wenti"></span>
+                    <div class="title">常见问题</div>
+                </div>
+            </div>
+        </div>
+        <div class="phone">
+            <a class="number" href="tel:400-1881-905">400-1881-905</a>
+        </div>
+        <!-- 导航区菜单 end -->
+        <!-- 个人中心底部菜单 start -->
+<div layout="row center-justify" id="foot-bar">
+    <div self="size-x1" class="item" >
+        <span class="iconfont icon-home"></span>
+        <div class="title">首页</div>
+    </div>
+    <div self="size-x1" class="item" >
+        <span class="iconfont icon-jiaoyi"></span>
+        <div class="title">交易</div>
+    </div>
+    <div self="size-x1" class="item" >
+        <span class="iconfont icon-fenxiang"></span>
+        <div class="title">分享</div>
+    </div>
+    <div self="size-x1" class="item active" >
+        <span class="iconfont icon-user"></span>
+        <div class="title">我的</div>
+    </div>
 </div>
-	
+<!-- 个人中心底部菜单 end -->
 
-
-
-    	<div class="height55"></div>
-
-<!--底部开始-->
-<style>
-	.footer ul li{
-		width: 25%;
-	}
-</style>
-	<div class="footer">
-    <ul>
-        
-        <li style="width:50%"><a href="/Index.php/Shop/Index/" class="block"><i class="iconfont">&#xe604;</i>商城</a></li>
-		<!-- <li><a href="/Index.php/Home/Info/mykuangche/" class="block"><i class="iconfont">&#xe601;</i>我的矿机</a></li> -->
-		<!-- <li><a href="/Index.php/Home/Info/Index/" class="block"><i class="iconfont">&#xe645;</i>交易中心</a></li> -->
-        <li style="width:49%" ><a href="/Index.php/Home/Index/Index/" class="block"><i class="iconfont">&#xe684;</i>钱包</a></li>
-    </ul>
-</div>
-	<!--底部结束-->
-	<script src="__PUBLIC__/web/js/jquery-weui.min.js"></script>
-		<p style="display:none;">
-<script src="http://s95.cnzz.com/z_stat.php?id=1261438452&web_id=1261438452" language="JavaScript"></script>
-</p>
-
+    </div>
+   
 </body>
+<!-- 个人中心的容器 end -->
+
+<script src="__PUBLIC__/dest/js/lib/jquery-3.3.1.min.js"></script>
+<script src="__PUBLIC__/dest/js/lib/global.js"></script>
+<script src="__PUBLIC__/dest/js/page/self.js"></script>
 </html>

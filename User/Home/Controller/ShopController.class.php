@@ -8,7 +8,7 @@ class ShopController extends CommonController {
 	
 	public function index() {
 		
-		
+		echo 56565656;
 		
 		$caution = M ( 'shopsj' )->where ( array (
 				'leixin' => 'jbzgq' ,

@@ -674,13 +674,10 @@ class LoginController extends Controller {
     
    public function logincl() {
     	header("Content-Type:text/html; charset=utf-8");
-		
     	//echo I('post.ip');die;
     	if (IS_POST) {
-			
     		//$this->error('系統暫未開放!');die;
 	    	$username=trim(I('post.account'));
-			
 			$pwd=trim(I('post.password'));
 			//$verCode = trim(I('post.verCode'));//驗證碼
 			//dump($pwd);die;
@@ -695,10 +692,10 @@ class LoginController extends Controller {
 				
 			}else{
 				//if (empty($phone)) {
-					$user=M('user')->where(array('UE_account'=>$username))->find();
+					$user=M('user')->where(['UE_account'=>$username])->find();
 				if(!$user || $user['ue_password']!=md5($pwd)){ 
 					$arr['status']=0;
-					$arr['msg']="账号或密码错误！";
+					$arr['msg']="账号或密码错误666！";
 					$this->ajaxReturn($arr);
 					//die("<script>alert('账号或密码错误,或被禁用！');history.back(-1);</script>");
 				}elseif($user['ue_status']=='3'){

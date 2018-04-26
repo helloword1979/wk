@@ -1,7 +1,7 @@
 <?php
 $arr = array(
 'DEFAULT_THEME'    =>    'default',// 设置默认的模板主题
-//'SHOW_PAGE_TRACE'=>true,
+'SHOW_PAGE_TRACE'=>true,
 'SHOW_ERROR_MSG' =>  false,
 'TOKEN_ON'      =>    false,
 'DEFAULT_FILTER' => 'strip_tags,htmlspecialchars',

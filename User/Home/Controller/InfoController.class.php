@@ -3822,28 +3822,47 @@ public function xgejmmcl() {
 	
 	//转让生命数
 	public function zhuanrang(){
+		$life_tree = M('user')->where(['UE_ID'=>$_SESSION['uid']])->field('life_tree')->find();
+		$this->assign('life_tree',$life_tree);
 		$this->display();
 	}
 	
 	//转让生命树
 	public function zrsms(){
+
+		// lkb 数量
+		// name 账号
 		$ajax['code']=0;
 		$uid=$_SESSION['uid'];
-		$num=trim(I("lkb"));
-		$name=trim(I("name"));
+		$num=trim(I("number"));//数量
+		$name=trim(I("account"));//账号
+		$secpwd = trim(I('secretpwd'));//安全密码
 		$data=array();
 		if(!$uid){
 			$ajax['code']=1;
-			$ajax['msg']="转让失败";
+			$ajax['msg']="转让失败请登录";
 			$this->ajaxReturn($ajax);exit;
 		}
-		$zrzh=M("User")->where("ue_account='".$name."'")->field("life_tree,ue_id")->find();
+		$zrzh=M("User")->where("ue_account='".$name."'")->field("life_tree,ue_id")->find();//查询转让账号
+
 		if(!$zrzh){
 			$ajax['code']=1;
 			$ajax['msg']="转让账号不存在";
 			$this->ajaxReturn($ajax);exit;
 		}
-		$ob=M("User")->where("ue_id='".$uid."'")->field("life_tree,ue_id")->find();
+		$ob=M("User")->where("ue_id='".$uid."'")->field("life_tree,ue_id,UE_secpwd")->find();//查询个人账号
+
+		if (md5($secpwd) != $ob['ue_secpwd']) {
+			$ajax['code']=1;
+			$ajax['msg']="安全密码错误";
+			$this->ajaxReturn($ajax);exit;
+		}
+
+		if ($zrzh['ue_id'] === $uid) {
+			$ajax['code']=1;
+			$ajax['msg']="不能转让自己";
+			$this->ajaxReturn($ajax);exit;
+		}
 		if($ob){
 			if($ob['life_tree']>=$num){
 				$data['life_tree']=$ob['life_tree']-$num;
@@ -3864,7 +3883,5 @@ public function xgejmmcl() {
 			$this->ajaxReturn($ajax);exit;
 		}
 	}
-	
-	
-	
+
 }

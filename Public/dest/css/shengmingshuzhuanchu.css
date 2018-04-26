@@ -1,0 +1,30 @@
+#confirm {
+    text-align: center;
+    margin-top: 40px;
+}
+.head-info {
+    background: red;
+    background: url(../image/blue.jpg) fixed top;
+    height: 150px;
+    position: relative;
+    z-index: -1;
+    color: white
+}
+.head-info p {
+    margin: 0;
+}
+.head-info .bottom {
+    position: absolute;
+    bottom:15px;
+}
+.head-info .title {
+    font-size: 16px;
+    font-weight: 300;
+}
+.head-info .number {
+    font-size: 30px;
+    letter-spacing: 3px;
+}
+.form {
+    margin-top: 10px
+}
