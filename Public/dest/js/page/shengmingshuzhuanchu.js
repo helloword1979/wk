@@ -24,8 +24,12 @@ function transfer(data) {
         url: "/Index.php/Home/Info/zrsms" ,//url
         data: data,
         success: function (result) {
+            if (result.code == 0) {
             alert(result.msg);
             location.href='/Index.php/Home/info/myziliao/';
+            }else{
+                alert(result.msg);
+            }
         },
         error : function() {
             alert("异常！");
