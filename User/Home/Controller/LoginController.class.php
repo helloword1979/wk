@@ -74,7 +74,6 @@ class LoginController extends Controller {
 	            }
 	        }
 	    $ip = $ip ? $ip : $_SERVER['REMOTE_ADDR'];
-	    $ip = '1.198.22.158';
 	    $city_arr = $this->getCity($ip);
 	    $city = $city_arr['country'].$city_arr['region'].$city_arr['city'];
 		$text ="【生命树】您的账号在地点：{$city}(仅供参考)登录，如非本人操作，请立即修改密码。";
