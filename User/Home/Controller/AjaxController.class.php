@@ -137,7 +137,7 @@ class AjaxController extends Basis1Controller{
 		// }
 		$clapi  = new ChuanglanSmsApi();
 		$qycode=rand(111111,999999);
-		$text="【万德瑞】您的验证码是{$qycode}。如非本人操作，请忽略本短信";
+		$text="【生命树】您的验证码是{$qycode}。如非本人操作，请忽略本短信";
 		$mobile = urlencode("$mobile");
 		$result = $clapi->sendSMS($mobile,$text);
 		if(!is_null(json_decode($result))){
