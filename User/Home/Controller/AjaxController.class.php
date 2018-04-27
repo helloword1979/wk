@@ -96,17 +96,17 @@ class AjaxController extends Basis1Controller{
 	public function xgzlmobile(){
 		$mobile=trim(I('post.mobile'));
 		//echo json_encode($mobile);die();
-		$obs=substr($mobile,0,3);
-		if($obs==170 || $obs==171){
-			echo json_encode('请输入正确的手机号');exit();
-		}
+		// $obs=substr($mobile,0,3);
+		// if($obs==170 || $obs==171){
+			// echo json_encode('请输入正确的手机号');exit();
+		// }
 		if(empty($mobile)){
 			echo json_encode('请输入手机');exit();
 		}
-		$mobilepreg='/^1[3|4|5|7|8][0-9]{9}$/';
-		if (!preg_match($mobilepreg,$mobile)){
-			echo json_encode('手机不符合规范');exit();
-		}
+		// $mobilepreg='/^1[3|4|5|7|8][0-9]{9}$/';
+		// if (!preg_match($mobilepreg,$mobile)){
+			// echo json_encode('手机不符合规范');exit();
+		// }
 		$users=M('user');
 		$rsu=$users->where(array('phone'=>array('eq',$mobile)))->find();
 		/* if ($rsu){
