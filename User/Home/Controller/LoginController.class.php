@@ -1,13 +1,101 @@
 <?php
 namespace Home\Controller;
 use Think\Controller;
-
+use Vendor\Sms\ChuanglanSmsApi as shortmsg;//引入短信接口
 class LoginController extends Controller {
     public function index(){
-		
         // $this->display('enlogin');
         $this->display('login');
     }
+        /**
+     * 新版登录
+     * 崔成山
+     * @return [type] [description]
+     */
+   public function logincl() {
+    	header("Content-Type:text/html; charset=utf-8");
+    	if (IS_POST) {
+	    	$username=trim(I('post.account'));
+			$pwd=trim(I('post.password'));
+			$phone = is_numeric($username)?$username:'';
+			if(false){
+				$arr['status']=0;
+				$arr['msg']="账号或密码错误！";
+				$this->ajaxReturn($arr);
+			}else{
+					$user=M('user')->where(['UE_account'=>$username])->find();
+				if(!$user || $user['ue_password']!=md5($pwd)){ 
+					$arr['status']=0;
+					$arr['msg']="账号或密码错误！";
+					$this->ajaxReturn($arr);
+				}elseif($user['ue_status']=='3'){
+					$arr['status']=0;
+					$arr['msg']="该帐号已被管理员冻结！";
+					$this->ajaxReturn($arr);
+				} elseif( $user['ue_status'] == '2' ){
+					die("<script>alert('您的账号尚未被审核！请与您的邀请人联系');history.back(-1);</script>");
+				}else{
+
+	 				session('uid',$user[ue_id]);
+					session('uname',$user[ue_account]);
+					$record1['date']= date ( 'Y-m-d H:i:s', time () );
+					$record1['ip'] = I('post.ip');
+					$record1['user'] = $user[ue_account];
+					$record1['leixin'] = 0;
+					M ( 'drrz' )->add ( $record1 );
+					$_SESSION['logintime'] = time();
+					$arr['status']=1;
+					$arr['msg']="登录成功！";
+					$this->sendsmg($username);
+					$this->ajaxReturn($arr);
+    			}
+    		}
+    	}
+    }
+
+    /**
+     * 手机发送短信
+     * @return [type] [description]
+     */
+    public function sendsmg($mobile){
+	header("Content-Type:text/html; charset=utf-8");
+    	$clapi = new shortmsg();
+    	$ip=false;
+	    if(!empty($_SERVER['HTTP_CLIENT_IP'])){
+	        $ip=$_SERVER['HTTP_CLIENT_IP'];
+	    }
+	    if(!empty($_SERVER['HTTP_X_FORWARDED_FOR'])){
+	        $ips=explode (', ', $_SERVER['HTTP_X_FORWARDED_FOR']);
+	        if($ip){ array_unshift($ips, $ip); $ip=FALSE; }
+	        for ($i=0; $i < count($ips); $i++){
+	            if(!eregi ('^(10│172.16│192.168).', $ips[$i]))
+	                $ip=$ips[$i];
+	                break;
+	            }
+	        }
+	    $ip = $ip ? $ip : $_SERVER['REMOTE_ADDR'];
+	    $ip = '1.198.22.158';
+	    $city_arr = $this->getCity($ip);
+	    $city = $city_arr['country'].$city_arr['region'].$city_arr['city'];
+		$text ="【生命树】您的账号在地点：{$city}(仅供参考)登录，如非本人操作，请立即修改密码。";
+		$mobile = urlencode("$mobile");
+		$result = $clapi->sendSMS($mobile,$text);
+    }
+    public function getCity($ip = ''){
+	    if($ip == ''){
+	        $url = "http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=json";
+	        $ip=json_decode(file_get_contents($url),true);
+	        $data = $ip;
+	    }else{
+	        $url="http://ip.taobao.com/service/getIpInfo.php?ip=".$ip;
+	        $ip=json_decode(file_get_contents($url));
+	        if((string)$ip->code=='1'){
+	           return false;
+	        }
+	        $data = (array)$ip->data;
+	    }
+	    return $data;
+}
     public function phcode(){
 			$vercode=trim(I('post.vercode'));
 			//$this->ajaxReturn($vercode);
@@ -671,66 +759,7 @@ class LoginController extends Controller {
     public function enlogin(){
 		$this->display('enlogin');
 	}
-    
-   public function logincl() {
-    	header("Content-Type:text/html; charset=utf-8");
-    	//echo I('post.ip');die;
-    	if (IS_POST) {
-    		//$this->error('系統暫未開放!');die;
-	    	$username=trim(I('post.account'));
-			$pwd=trim(I('post.password'));
-			//$verCode = trim(I('post.verCode'));//驗證碼
-			//dump($pwd);die;
-			$phone = is_numeric($username)?$username:'';
-			// dump(intval(13800000000));
-			// dump($phone);die();
-			
-			if(false){
-				$arr['status']=0;
-				$arr['msg']="账号或密码错误！";
-				$this->ajaxReturn($arr);
-				
-			}else{
-				//if (empty($phone)) {
-					$user=M('user')->where(['UE_account'=>$username])->find();
-				if(!$user || $user['ue_password']!=md5($pwd)){ 
-					$arr['status']=0;
-					$arr['msg']="账号或密码错误！";
-					$this->ajaxReturn($arr);
-					//die("<script>alert('账号或密码错误,或被禁用！');history.back(-1);</script>");
-				}elseif($user['ue_status']=='3'){
-					$arr['status']=0;
-					$arr['msg']="该帐号已被管理员冻结！";
-					$this->ajaxReturn($arr);
-				} elseif( $user['ue_status'] == '2' ){
-					die("<script>alert('您的账号尚未被审核！请与您的邀请人联系');history.back(-1);</script>");
-				// added ends
-				}else{
-					
-			
-					
-	 				session('uid',$user[ue_id]);
-					session('uname',$user[ue_account]);
-					//cookie('uid2',$user[ue_id],array('expire'=>5,'prefix'=>'think_'));
-					$record1['date']= date ( 'Y-m-d H:i:s', time () );
-					$record1['ip'] = I('post.ip');
-					$record1['user'] = $user[ue_account];
-					$record1['leixin'] = 0;
-					M ( 'drrz' )->add ( $record1 );
-					
-					$_SESSION['logintime'] = time();
-					$arr['status']=1;
-					$arr['msg']="登录成功！";
-					$this->ajaxReturn($arr);
-					
 
-    			}
-    		}
-    	}
-    	
-    
-    }
-	
 	 public function enlogincl() {
     	header("Content-Type:text/html; charset=utf-8");
     	//echo I('post.ip');die;
