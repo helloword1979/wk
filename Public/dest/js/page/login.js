@@ -31,7 +31,7 @@ function login(data) {
     $.ajax({
         type: "POST",//方法类型
         dataType: "json",//预期服务器返回的数据类型
-        url: "/Index.php/Home/Login/logincl" ,//url
+        url: "/Index.php/Home/Login/logincl/" ,//url
         data: data,
         success: function (result) {
             if (result.status== 1) {
