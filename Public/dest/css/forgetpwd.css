@@ -1,0 +1,4 @@
+/*重置密码样式*/
+.btn.focus, .btn:focus, .btn:hover {
+    color: white !important;
+}

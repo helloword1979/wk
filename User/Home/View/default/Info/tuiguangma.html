@@ -1,58 +1,70 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link type="text/css" rel="stylesheet" href="__PUBLIC__/web/css/lib.css?2">
-   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1, minimum-scale=1.0"/>
-   <meta content="telephone=no" name="format-detection">
-    <title>林场扩建</title>
-    <script src="__PUBLIC__/web/js/jquery-1.8.3.min.js"></script>
-    <link rel="stylesheet" href="__PUBLIC__/web/css/weui.min.css"/>
-    <link rel="stylesheet" href="__PUBLIC__/web/css/jquery-weui.min.css">
-    <link href="__PUBLIC__/web/css/font-awesome.min.css" rel="stylesheet">
-    <link href="__PUBLIC__/web/fonts/iconfont.css" rel="stylesheet">
-    <script src="__PUBLIC__/web/js/layer.js"></script>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+       
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/dest/css/reset.css">
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/dest/css/global.css">
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/dest/css/fenxiang.css">
+        <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_640143_4xmg09t955t57b9.css">
+        <title>fenxiang</title>
+        <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
 </head>
-<body>
-    <!--顶部开始-->
-    <div class="header">
-        <span class="header_l"><a href="javascript:history.go(-1);"><i class="fa fa-chevron-left"></i></a></span>
-        <span class="header_c">林场扩建</span>
-		<span style="position: absolute;right: 10%;top: 0px;text-align:center;width:20%;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;font-size: 12px; ">{$userData['ue_truename']}</span>
-        <span class="header_r"><a href="/Index.php/Home/Index/index"><i class="fa fa-user"></i></a></span>
+<!-- 个人中心的容器 start -->
+<body id="self">
+    <div class="self_wrap fenxiang">
+        <h1 class="title">分享</h1>
+        <!-- 红包与二维码 start  -->
+        <div class="e_code">
+            <img src="__PUBLIC__/dest/image/share.jpg" />
+            <div class="e_code-img">
+                <!-- 此处替换二维码 start-->
+                <img src="/images/{$_SESSION['uname']}.png" />
+                <!-- 此处替换二维码 end-->
+
+            </div>
+            <!-- <p class='e_code_number'>我的邀请码<span style="margin: 0 10px 0 5px;">:</span>123<p> -->
+        </div>
+        <!-- 红包与二维码 end  -->
+        <div class="my-share">
+            <div class="rows" layout="row center-center">
+                <div self="size-x1" class="item"><span class="iconfont icon-yemiantuiguang"></span><span class='content'>我的推广</span></div>
+                <div self="size-x1" class="item">
+                    <button type="button" class="btn  blue" style="width: 85%" id="view" onclick="jump('')">立即查看</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 个人中心底部菜单 start -->
+<div layout="row center-justify" id="foot-bar">
+    <div self="size-x1" class="item" onclick="jump('home.html')">
+        <span class="iconfont icon-home"></span>
+        <div class="title">首页</div>
+    </div>
+    <div self="size-x1" class="item" onclick="jump('building.html')">
+        <span class="iconfont icon-jiaoyi"></span>
+        <div class="title">交易</div>
+    </div>
+    <div self="size-x1" class="item active" onclick="jump('fenxiang.html')">
+        <span class="iconfont icon-fenxiang"></span>
+        <div class="title">分享</div>
+    </div>
+    <div self="size-x1" class="item" onclick="jump('self.html')">
+        <span class="iconfont icon-user"></span>
+        <div class="title">我的</div>
+    </div>
+</div>
+<!-- 个人中心底部菜单 end -->
+
     </div>
    
-    <!--顶部结束-->
-    <!--列表开始-->
-<div style="text-align:center;padding-bottom:80px">	
-
-	<input type="text" readonly="readonly" value="{$url}" style="width:95%;line-height:30px;margin-top:50px;padding:0px 5px;"/>
-	
-	<img src="/images/{$_SESSION['uname']}.png" style="width:95%;height:100%;margin-top:3%;">
- 
-	
-<br>
-<P></p>
-</div>
-<!--底部开始-->
-<style>
-    .footer ul li{
-        width: 25%;
-    }
-</style>
-<div class="footer">
-    <ul>
-        
-        <li style="width:50%"><a href="/Index.php/Shop/Index/" class="block"><i class="iconfont">&#xe604;</i>商城</a></li>
-		<!-- <li><a href="/Index.php/Home/Info/mykuangche/" class="block"><i class="iconfont">&#xe601;</i>我的矿机</a></li> -->
-		<!-- <li><a href="/Index.php/Home/Info/Index/" class="block"><i class="iconfont">&#xe645;</i>交易中心</a></li> -->
-        <li style="width:49%" ><a href="/Index.php/Home/Index/Index/" class="block"><i class="iconfont">&#xe684;</i>钱包</a></li>
-    </ul>
-</div>
-<!--底部结束-->
-<script src="__PUBLIC__/web/js/jquery-weui.min.js"></script>
-<script>
-	
-</script>
 </body>
+<!-- 个人中心的容器 end -->
+
+<script src="../js/lib/jquery-3.3.1.min.js"></script>
+<script src="../js/lib/global.js"></script>
+<script src="../js/page/fenxiang.js"></script>
 </html>

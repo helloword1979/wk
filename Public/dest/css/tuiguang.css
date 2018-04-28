@@ -1,0 +1,31 @@
+.tuiguang {
+    max-width: 700px;
+    margin:0px auto;
+} 
+    .tuiguang .part-one {
+        position: relative;
+        text-align: center
+    } 
+    .tuiguang .part-one img {
+    width: 100%;
+} 
+    .tuiguang .part-one .number {
+    position: absolute;
+    top: 53%;
+    left: 44%;
+    font-size: 31px;
+    color: #d63d33;
+} 
+    .tuiguang .part-one .invite_code {
+    position: absolute;
+    bottom: 2rem;
+    left:0;
+    color: #4c4c4c;
+    right: 0;
+    font-size: 16px;
+    margin:auto;
+} 
+    .tuiguang .part-one .invite_code .invite_number {
+    color:#5395fe;
+    margin-left: 15px;
+}

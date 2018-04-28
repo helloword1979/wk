@@ -1,0 +1,69 @@
+/*分享界面的样式*/
+body {
+    background: #368eed !important;
+}
+.fenxiang .e_code {
+    position: relative;
+    text-align: center;
+}
+.fenxiang h1.title {
+    text-align: center;
+    color: white;
+    font-size: 20px;
+}
+.fenxiang .e_code_number {
+    position: absolute;
+    bottom: 20px;
+    color: #fdf33d;
+    font-size: 20px;
+    left:0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+}
+.fenxiang .e_code-img {
+    position: absolute;
+    bottom: 80px;
+    width: 130px;
+    height: 130px;
+    color: #fdf33d;
+    font-size: 20px;
+    left:0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+}
+.fenxiang .my-share {
+    position: fixed;
+    border-top-left-radius:10px;
+    border-top-right-radius:10px;
+    bottom:50;
+    width: 279px;
+    height: 62px;
+    background: white;
+    left:0;
+    right:0;
+    margin:auto;
+}
+.fenxiang .my-share .rows {
+    height: 100%;
+}
+.fenxiang .my-share .item {
+    text-align: center;
+}
+.fenxiang .my-share .content {
+    color:#4c4c4c;
+    font-size: 14px;
+    margin-left: 10px;
+}
+.fenxiang .my-share .icon-yemiantuiguang {
+    font-size: 24px;
+    color:#36a1fa;
+    vertical-align: -4px;
+}
+#view {
+    width: 78%;
+    padding: 0;
+    height: 25px;
+    font-size: 15px;
+}

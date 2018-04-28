@@ -818,15 +818,15 @@ class InfoController extends CommonController {
         $size=10;
         $errorCorrectionLevel =intval($level) ;//容错级别
         $matrixPointSize = intval($size);//生成图片大小
-		
 		QRcode::png($data, false, $level, $size);
         //$object->png($url, false, $errorCorrectionLevel, $matrixPointSize, 2);
-		
     }
+
 	public function tuiguangma(){
 		header ( "Content-type: text/html; charset=utf-8" );
 		$url = 'http://' . $_SERVER['HTTP_HOST'] . '/index.php/Home/User/reg?uid='.session ( 'uid' );
 		 Vendor('phpqrcode.phpqrcode');
+		 echo $url.'<br />';
         //生成二维码图片
         $object = new \QRcode();
         $url=$url;//网址或者是文本内容
@@ -834,26 +834,16 @@ class InfoController extends CommonController {
         $size=6;
         $errorCorrectionLevel =intval($level) ;//容错级别
         $matrixPointSize = intval($size);//生成图片大小
-		
-		
 		 $path = "images/";
             // 生成的文件名
             $fileName = $path.$_SESSION['uname'].'.png';
-			
-			
-			
+            echo $fileName;
 			$object->png($url,$fileName, $errorCorrectionLevel, $matrixPointSize, 2);
-		
+			
 			$img = new \Think\Image();
 			define('THINKIMAGE_WATER_CENTER', 5);
-			$img->open('./card.jpg')->water($fileName, array(150,538))->text($name,'./hei.ttf','20','#d53917', array(-255,-970))->save($fileName);
-		
-		
-		
-		
+			$img->open('./card.png')->water($fileName, array(0,0))->text($name,'./hei.ttf','20','#d53917', array(-255,-970))->save($fileName);
 		$this->assign('url', $url);
-
-		
 		$this->display ();
 
 	}

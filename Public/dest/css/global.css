@@ -2672,6 +2672,19 @@ html{-webkit-box-sizing:border-box;box-sizing:border-box}
   background: url(../image/logo.jpg) no-repeat center;
   background-size: 100%;
 }
+#before-login .before-login__back {
+        position: fixed;
+        width: 33px;
+        height: 33px;
+        background: rgba(255,255,255, 0.3);
+        color:white;
+        font-size: 18px;
+        top:30px;
+        left: 10%;
+        line-height: 33px;
+        text-align: center;;
+        border-radius: 50%;
+    }
 .clear {
     clear: both;
 }
