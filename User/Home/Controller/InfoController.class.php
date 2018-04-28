@@ -826,7 +826,6 @@ class InfoController extends CommonController {
 		header ( "Content-type: text/html; charset=utf-8" );
 		$url = 'http://' . $_SERVER['HTTP_HOST'] . '/index.php/Home/User/reg?uid='.session ( 'uid' );
 		 Vendor('phpqrcode.phpqrcode');
-		 echo $url.'<br />';
         //生成二维码图片
         $object = new \QRcode();
         $url=$url;//网址或者是文本内容
@@ -837,7 +836,6 @@ class InfoController extends CommonController {
 		 $path = "images/";
             // 生成的文件名
             $fileName = $path.$_SESSION['uname'].'.png';
-            echo $fileName;
 			$object->png($url,$fileName, $errorCorrectionLevel, $matrixPointSize, 2);
 			
 			$img = new \Think\Image();
