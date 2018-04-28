@@ -3348,8 +3348,10 @@ public function userbtc(){
     // purpose: custom settings
     // version: 4.0
 	public function settings( $templ = '' ){
+
+		// var_dump($_POST);exit();
+		// echo $templ;exit();
 		$settings = include( dirname( APP_PATH ) . '/User/Home/Conf/settings.php' );
-		
 		if( IS_POST ){
 			if($_POST['jiaoyi_shouxu']!=""){
 			$_POST['jiaoyi_shouxu']=floatval($_POST['jiaoyi_shouxu']/100.0);
@@ -3386,16 +3388,12 @@ public function userbtc(){
 				$_POST['masses_share'][$k] = floatval( $v ) / 100.0;
 			}
 			// added ends
-			
 			foreach( $settings as $k=>$v ){
 				if( isset( $_POST[$k] ) ){
 					$settings[$k] = $_POST[$k];
 				}
 			}
-			
-			
 			$file_length = file_put_contents( dirname( APP_PATH ) . '/User/Home/Conf/settings.php', '<?php return ' . var_export( $settings, true ) . '; ?>' );
-			
 			if( $file_length ){
 				$this->success('保存成功！');
 			} else {

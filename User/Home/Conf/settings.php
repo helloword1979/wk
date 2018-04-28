@@ -20,7 +20,7 @@
   'min_danjia' => '0.10',
   'max_danjia' => '1',
   'jiaoyi_shouxu' => 0.29999999999999999,
-  'rmb_hl' => '7',
+  'rmb_hl' => '70',
   'btc_hl' => '0.000167',
   'min_tixian_money' => '10',
   'max_user_level' => '0',

@@ -8,6 +8,7 @@ class IndexController extends Controller {
 	// 首页
 	public function index() {
 		header("Content-type:text/html;charset=utf-8");
+		$settings = include( dirname( APP_PATH ) . '/User/Home/Conf/settings.php' );//引入设置文件
 		I('post.help', '', I('get.i'));
 		if(! isset ( $_SESSION ['uid'] )){
 			$this->redirect ( '/Index.php/Home/Login/index' );
@@ -29,7 +30,7 @@ class IndexController extends Controller {
 		$this->assign('djmoney',$djmoney);
 		$this->assign('kymoney',$kymoney);
 		//$this->assign('openid',$openid);
-		
+		$this->assign('settings',$settings);
 		$this->display();
 	}
 	public function enindex() {
