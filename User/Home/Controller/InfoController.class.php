@@ -353,6 +353,34 @@ class InfoController extends CommonController {
 		$this->assign('list',$user);
 		$this->display();
 	}
+
+	/**
+	 * 我的推广
+	 * @return [type] [description]
+	 */
+	public function myspred(){
+		//UE_accuid 推荐人id
+		$recommended = M('user')->where(['UE_accuid'=>$_SESSION['uid']])->field('ue_id,UE_regTime,UE_account,UE_accuid')->select();
+		if (I('post.type') == 'a') {//我的直推
+			$recommended = M('user')->where(['UE_accuid'=>$_SESSION['uid']])->field('ue_id,UE_regTime,UE_account')->select();
+			$this->ajaxReturn(['type'=>'a','data'=>$recommended]);
+		}else if (I('post.type') == 'b') {//我的二代
+			$second = implode(',',array_column($recommended,'ue_id'));
+			$second_recommended = M('user')->where(['UE_accuid'=>['in',$second]])->field('UE_regTime,UE_account')->select();
+			$this->ajaxReturn(['type'=>'b','data'=>$second_recommended]);
+		}else if (I('post.type') == 'c') {//销售总额
+			//to do
+			$this->ajaxReturn(['type'=>'c','data'=>[]]);
+		}else{
+			$userCount = M('user')->where(['UE_accuid'=>$_SESSION['uid']])->count("UE_accuid");
+			$second = implode(',',array_column($recommended,'ue_id'));
+			$secondCount = M('user')->where(['UE_accuid'=>['in',$second]])->count('UE_ID');
+			$this->assign('userCount',$userCount);
+			$this->assign('secondCount',$secondCount);
+			$this->assign('recommended',$recommended);
+			$this->display();
+		}
+	}
 	public function enmyziliao(){
 		$user=M('user')->where(array('UE_account'=>$_SESSION['uname']))->select();
 		$users=M('user')->where(array('UE_account'=>$_SESSION['uname']))->find();

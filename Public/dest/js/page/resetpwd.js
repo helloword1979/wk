@@ -57,10 +57,15 @@ function reset(data) {
     $.ajax({
         type: "POST",//方法类型
         dataType: "json",//预期服务器返回的数据类型
-        url: "/users/login" ,//url
+        url: "/index.php/Home/login/reset_passwd/" ,//url
         data: data,
         success: function (result) {
-            alert("success");
+            if (result.code == 1) {
+                alert(result.msg);
+                window.location.href='/index.php/Home/Login/Index/'
+            }else{
+                alert(result.msg);
+            }
         },
         error : function() {
             alert("异常！");

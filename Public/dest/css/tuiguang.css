@@ -1,22 +1,25 @@
+body {
+    background: white !important;
+}
 .tuiguang {
     max-width: 700px;
     margin:0px auto;
-} 
-    .tuiguang .part-one {
+}
+.tuiguang .part-one {
         position: relative;
         text-align: center
-    } 
-    .tuiguang .part-one img {
+    }
+.tuiguang .part-one img {
     width: 100%;
-} 
-    .tuiguang .part-one .number {
+}
+.tuiguang .part-one .number {
     position: absolute;
-    top: 53%;
+    top: 51%;
     left: 44%;
     font-size: 31px;
     color: #d63d33;
-} 
-    .tuiguang .part-one .invite_code {
+}
+.tuiguang .part-one .invite_code {
     position: absolute;
     bottom: 2rem;
     left:0;
@@ -24,8 +27,48 @@
     right: 0;
     font-size: 16px;
     margin:auto;
-} 
-    .tuiguang .part-one .invite_code .invite_number {
+}
+.tuiguang .part-one .invite_code .invite_number {
     color:#5395fe;
     margin-left: 15px;
 }
+.tuiguang .part-two {
+        padding: 0 15px;
+        background: white;
+    }
+.tuiguang .part-two .info {
+            height: 65px;
+            text-align: center;
+        }
+.tuiguang .part-two .info p {
+                margin:0;
+            }
+.tuiguang .part-two .info .title {
+    font-size: 16px;
+    color:#4c4c4c;
+}
+.tuiguang .part-two .info .number {
+    font-size: 14px;
+    color: #a2a2a2;
+}
+.tuiguang .part-two .info .active .title {
+    color:#5395fe;
+}
+.tuiguang .part-two .info .active .number {
+    color: #5395fe;
+}
+.tuiguang .part-two .table {
+            font-size: 12px;
+
+        }
+.tuiguang .part-two .table td, .tuiguang .part-two .table th {
+                border: none;
+                text-align: center;
+
+            }
+.tuiguang .part-two .table th {
+                color:#5395fe;
+            }
+.tuiguang .part-two .table td {
+                color: #a2a2a2;
+            }

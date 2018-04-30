@@ -2618,6 +2618,9 @@ html{-webkit-box-sizing:border-box;box-sizing:border-box}
 @media screen and (max-width:64em){[self*=lg-full]{-ms-flex:1 1 100%!important;-webkit-box-flex:1!important;flex:1 1 100%!important;width:100%;max-width:100%}[self*=lg-half]{-ms-flex:1 1 50%!important;-webkit-box-flex:1!important;flex:1 1 50%!important;width:50%;max-width:50%}[self~=lg-first]{-ms-flex-order:-1;-webkit-box-ordinal-group:0;order:-1}[self~=lg-last]{-ms-flex-order:999;-webkit-box-ordinal-group:1000;order:999}[self~=lg-hide]{display:none}[self~=lg-show]{display:inherit}}
 @media screen and (max-width:52em){[self*=md-full]{-ms-flex:1 1 100%!important;-webkit-box-flex:1!important;flex:1 1 100%!important;width:100%;max-width:100%}[self*=md-half]{-ms-flex:1 1 50%!important;-webkit-box-flex:1!important;flex:1 1 50%!important;width:50%;max-width:50%}[self~=md-first]{-ms-flex-order:-1;-webkit-box-ordinal-group:0;order:-1}[self~=md-last]{-ms-flex-order:999;-webkit-box-ordinal-group:1000;order:999}[self~=md-hide]{display:none}[self~=md-show]{display:inherit}}
 @media screen and (max-width:40em){[self*=sm-full]{-ms-flex:1 1 100%!important;-webkit-box-flex:1!important;flex:1 1 100%!important;width:100%;max-width:100%}[self*=sm-half]{-ms-flex:1 1 50%!important;-webkit-box-flex:1!important;flex:1 1 50%!important;width:50%;max-width:50%}[self~=sm-first]{-ms-flex-order:-1;-webkit-box-ordinal-group:0;order:-1}[self~=sm-last]{-ms-flex-order:999;-webkit-box-ordinal-group:1000;order:999}[self~=sm-hide]{display:none}[self~=sm-show]{display:inherit}}
+a:hover, a:focus{
+  text-decoration: none !important;
+}
 /* 未登陆之前的主题样式 */
 #before-login {
     background: url(../image/bg.jpg) no-repeat fixed top;

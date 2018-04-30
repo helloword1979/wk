@@ -46,7 +46,7 @@ class LoginController extends Controller {
 					$_SESSION['logintime'] = time();
 					$arr['status']=1;
 					$arr['msg']="登录成功！";
-					$this->sendsmg($username);
+					// $this->sendsmg($username);
 					$this->ajaxReturn($arr);
     			}
     		}
@@ -80,6 +80,11 @@ class LoginController extends Controller {
 		$mobile = urlencode("$mobile");
 		$result = $clapi->sendSMS($mobile,$text);
     }
+    /**
+     * 根据ip获取城市
+     * @param  string $ip [description]
+     * @return [type]     [description]
+     */
     public function getCity($ip = ''){
 	    if($ip == ''){
 	        $url = "http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=json";
@@ -95,6 +100,146 @@ class LoginController extends Controller {
 	    }
 	    return $data;
 }
+
+	/**
+	 * 修改密码
+	 * @return [type] [description]
+	 */
+	public function uppwd(){
+		header("Content-Type:text/html; charset=utf-8");
+		if(IS_POST){
+			$users = M ( 'user' );
+			$rsname=$users->where(array('phone'=>I ( 'post.phone' )))->find();
+			$vercode=trim(I('post.vercode'));
+			//$yanzheng=M('retrieve_token')->where(array('user_email'=>I ( 'post.phone' )))->order('id desc')->find();
+			if(!$this->check_verify($vercode)){
+			// added ends
+				die("<script>alert('验证码错误，请刷新验证码！');history.back(-1);</script>");
+				//$this->ajaxReturn( array('nr'=>'驗證碼錯誤,請刷新驗證碼!','sf'=>0) );
+			}
+			if (!$rsname) {
+				$this->error('该会员帐号不存在');
+			}
+			if($_POST['pwd']!=$_POST['pwd2']){
+				die("<script>alert('新登陆密码两次输入不一致');history.back(-1);</script>");
+			}
+			if($_POST['aqpwd']!=$_POST['aqpwd2']){
+				die("<script>alert('新安全密码两次输入不一致');history.back(-1);</script>");
+			}
+			$re=M('smscode')->where(array('mobile' => I ( 'post.phone' ),'regcode'=>I ( 'post.code' )))->find(); 
+			if ($re['edittime'] > time()) {
+				if (!$re['regcode']==I ( 'post.code' )) {
+					$this->error('手机验证码不正确');
+				}
+			}else {
+				$this->error('手机验证码已经过期');
+			}
+			
+			
+			$save_result =M('user')->where( array(
+			'phone' => $_POST['phone'])
+		)->save( array(
+			'UE_password' => md5( I( 'post.pwd' ) ),'UE_secpwd'=>md5(I('post.aqpwd'))
+		) );
+			
+			if( $save_result === NULL ){
+				die("<script>alert('修改失败！请与管理员联系！');window.location.href='/index.php/Home/Index/index/';</script>");
+			} else {
+				die("<script>alert('修改成功！请使用新密码登陆');window.location.href='/index.php/Home/Index/index/';</script>");
+			}
+			
+		}
+	}
+
+	/**
+	 * 忘记密码
+	 * @return [type] [description]
+	 */
+		public function retrieve_password(){
+			header("content-type:text/html;charset=utf-8");
+		if( IS_POST ){
+			//获取验证码比对是否正确
+			$smscode = M('smscode')->where(['mobile'=>I('post.phone'),'regcode'=>I('captcha')])->find();
+			if (!$smscode['regcode']==I ( 'captcha' )) {
+				die("<script>alert('手机验证码错误！');history.back(-1);</script>");
+			}
+			$user_data = M('user')->where(['UE_account' =>I('post.phone')])->find();
+
+			if( $user_data === NULL ){
+				die("<script>alert('用户不存在！');history.back(-1);</script>");
+			}
+			$this->assign('captcha',I ('captcha'));
+			$this->assign('user_id',base64_encode($user_data['ue_id']));
+			$this->display('reset_password');
+		} else {
+			$this->display('retrieve_password');
+		}
+	}
+
+	/**
+	 * 重置密码
+	 * @return [type] [description]
+	 */
+		public function reset_passwd(){
+		$user_id = I( 'post.user_id' );
+		$captcha = I('post.captcha');
+		$smscode = M('smscode')->where(['mobile'=>I('post.phone'),'regcode'=>I('captcha')])->find();
+		if (empty($smscode) || empty($captcha) || empty($user_id) || $smscode['regcode']!=$captcha) {
+			$this->index();
+			exit();
+		}
+
+		if (empty(I( 'post.password' ))) {
+			$this->ajaxReturn(['code'=>0,'msg'=>'密码不能为空']);
+			exit();
+		}
+		$user_model = M( 'user' );
+		$save_result = $user_model->where( array(
+			'UE_ID' => base64_decode( $user_id ) )
+		)->save(array('UE_password' => md5( I( 'post.password' ))
+		) );
+		if( $save_result === NULL ){
+			$this->ajaxReturn(['code'=>0,'msg'=>'修改失败']);
+		} else {
+			$this->ajaxReturn(['code'=>1,'msg'=>'修改成功']);
+		}
+	}
+
+
+		public function retrieve( $check_param_only = false ){
+		
+		$user_id = I( 'get.user_id' );
+		if( !$user_id ) $user_id = I( 'post.user_id' );
+		$token   = I( 'get.token' );
+		if( !$token ) $token = I( 'post.token' );
+
+		$user_id = base64_decode( urldecode( $user_id ) );
+		$model = M( 'retrieve_token' );
+
+		$retrieve_info = $model->where( array(
+			'user_email' => $user_id,
+			'token'      => $token,
+			'expire_at'  => array( 'gt', time() ),
+		) )->find();
+	
+		if( !$retrieve_info ){
+		 	$this->error( '无效的链接，或已经过期！' );
+
+		 	return false;
+		}
+
+		if( $check_param_only ){
+			return true;
+		}
+
+		$this->assign( 'user_id', base64_encode( $user_id ) );
+		$this->assign( 'token', $token );
+
+		$this->display( 'reset_password' );
+	}
+
+
+
     public function phcode(){
 			$vercode=trim(I('post.vercode'));
 			//$this->ajaxReturn($vercode);
@@ -195,52 +340,7 @@ class LoginController extends Controller {
 		}
 		
 	}
-	public function uppwd(){
-		header("Content-Type:text/html; charset=utf-8");
-		if(IS_POST){
-			
-			$users = M ( 'user' );
-			$rsname=$users->where(array('phone'=>I ( 'post.phone' )))->find();
-			$vercode=trim(I('post.vercode'));
-			//$yanzheng=M('retrieve_token')->where(array('user_email'=>I ( 'post.phone' )))->order('id desc')->find();
-			if(!$this->check_verify($vercode)){
-			// added ends
-				die("<script>alert('验证码错误，请刷新验证码！');history.back(-1);</script>");
-				//$this->ajaxReturn( array('nr'=>'驗證碼錯誤,請刷新驗證碼!','sf'=>0) );
-			}
-			if (!$rsname) {
-				$this->error('该会员帐号不存在');
-			}
-			if($_POST['pwd']!=$_POST['pwd2']){
-				die("<script>alert('新登陆密码两次输入不一致');history.back(-1);</script>");
-			}
-			if($_POST['aqpwd']!=$_POST['aqpwd2']){
-				die("<script>alert('新安全密码两次输入不一致');history.back(-1);</script>");
-			}
-			$re=M('smscode')->where(array('mobile' => I ( 'post.phone' ),'regcode'=>I ( 'post.code' )))->find(); 
-			if ($re['edittime'] > time()) {
-				if (!$re['regcode']==I ( 'post.code' )) {
-					$this->error('手机验证码不正确');
-				}
-			}else {
-				$this->error('手机验证码已经过期');
-			}
-			
-			
-			$save_result =M('user')->where( array(
-			'phone' => $_POST['phone'])
-		)->save( array(
-			'UE_password' => md5( I( 'post.pwd' ) ),'UE_secpwd'=>md5(I('post.aqpwd'))
-		) );
-			
-			if( $save_result === NULL ){
-				die("<script>alert('修改失败！请与管理员联系！');window.location.href='/index.php/Home/Index/index/';</script>");
-			} else {
-				die("<script>alert('修改成功！请使用新密码登陆');window.location.href='/index.php/Home/Index/index/';</script>");
-			}
-			
-		}
-	}
+
 	public function register() {
 	header("Content-Type:text/html; charset=utf-8");
 		$phone=trim(I("username"));
@@ -492,58 +592,7 @@ class LoginController extends Controller {
 		}
 		
 	}
-	public function retrieve_password(){
-		if( IS_POST ){
-			$user_data = M( 'user' )->where( array( 'UE_account' => I( 'post.mobile' ) ) )->find();
-			if( $user_data === NULL ){
-			 	$this->ajaxReturn('用户不存在');
 
-				return;
-			}
-
-			$retrieve_data = M( 'retrieve_token' )->where( array( 'UE_account' => I( 'post.mobile' ) ) )->find();
-
-			if( $retrieve_data ){
-				if( strtotime( $retrieve_data['expire_at'] ) < time() ){
-					// 已经过期
-					M( 'retrieve_token' )->where( array( 'user_email' => I( 'post.mobile' ) ) )->delete();
-				} else {
-					// 已经发送
-				 	$this->error( '已经发送，两小时内曾发过，请进入邮箱查收！' );
-
-				 	return;
-			 	}
-			}
-
-			$insert_result = M( 'retrieve_token' )->add( $retrieve_info = array(
-				'user_id'    => $user_data['ue_id'],
-				'user_email' => $user_data['ue_account'],
-				'token'      => md5( $user_data['UE_account'] . time() .rand( 0, 9999 ) ),
-				'expire_at'  => time() + 7200,
-			) );
-
-			$retrieve_uri = 'http://' . I( 'server.HTTP_HOST' ) . U('/index.php/Home/Login/retrieve') . '?' . http_build_query( array(
-				'user_id' => urlencode( base64_encode( $retrieve_info['user_email'] ) ),
-				'token' => $retrieve_info['token'],
-			) );
-			
-		
-			
-			
-			$this->assign( 'user_email', $retrieve_info['user_email'] );
-			$this->assign( 'retrieve_uri', $retrieve_uri );
-
-			$mail_content = $this->fetch( 'mail_retrieve_password' );
-
-			$mobile=$_POST['mobile'];
-			$mail_content = $this->fetch( 'mail_retrieve_password' );
-			$content="GEC密码找回";
-			sendmail($mobile,$mail_content,$content);
-			$this->ajaxReturn("发送成功");
-		} else {
-			$this->display('retrieve_password');
-		}
-	}
 	public function enretrieve_password(){
 		
 		if( IS_POST ){
@@ -657,68 +706,7 @@ class LoginController extends Controller {
 
 		$this->display( 'enreset_password' );
 	}
-	public function retrieve( $check_param_only = false ){
-		
-		$user_id = I( 'get.user_id' );
-		if( !$user_id ) $user_id = I( 'post.user_id' );
-		$token   = I( 'get.token' );
-		if( !$token ) $token = I( 'post.token' );
 
-		$user_id = base64_decode( urldecode( $user_id ) );
-		$model = M( 'retrieve_token' );
-
-		$retrieve_info = $model->where( array(
-			'user_email' => $user_id,
-			'token'      => $token,
-			'expire_at'  => array( 'gt', time() ),
-		) )->find();
-	
-		if( !$retrieve_info ){
-		 	$this->error( '无效的链接，或已经过期！' );
-
-		 	return false;
-		}
-
-		if( $check_param_only ){
-			return true;
-		}
-
-		$this->assign( 'user_id', base64_encode( $user_id ) );
-		$this->assign( 'token', $token );
-
-		$this->display( 'reset_password' );
-	}
-
-	public function reset_passwd(){
-		
-		$param_check = $this->retrieve( true );
-
-		if( !$param_check ){
-			return;
-		}
-		
-
-		$user_id = I( 'post.user_id' );
-		$token = I( 'post.token' );
-
-		$user_model = M( 'user' );
-	
-		$save_result = $user_model->where( array(
-			'UE_account' => base64_decode( $user_id ) )
-		)->save( array(
-			'UE_password' => md5( I( 'post.yjmm' ) ),'UE_secpwd'=>md5(I('post.ejmm'))
-		) );
-
-		M( 'retrieve_token' )->where( array(
-			'user_email' => base64_decode( $user_id ),
-		) )->delete();
-
-		if( $save_result === NULL ){
-			$this->error( '修改失败！请与管理员联系！', '/Index.php/Home/Login/index', 2 );
-		} else {
-			$this->error( '修改成功！请使用新密码登陆', '/Index.php/Home/Login/index', 2 );
-		}
-	}
 	public function enreset_passwd(){
 		
 		$param_check = $this->retrieve( true );

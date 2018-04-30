@@ -1,0 +1,90 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+       
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/dest/css/reset.css">
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/dest/css/global.css">
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/dest/css/tuiguang.css">
+        <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_640143_4xmg09t955t57b9.css">
+        <title>我的推广</title>
+        <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+</head>
+<!-- 个人中心的容器 start -->
+<body id="self">
+    <div class="self_wrap tuiguang wrap-padding">
+        <div class="part-one">
+            <img src="__PUBLIC__/dest/image/tuiguan_01.jpg" />
+            <span class="number">12</span>
+            <p class="invite_code">我的邀请码: <span class="invite_number">123123</span></p>
+        </div>   
+        <div class="part-two">
+            <div layout="rows center-center" class="info">
+                <div self="size-x1" class='item' data-type="a">
+                    <p class="title">我的直推</p>
+                    <p class="number">{$userCount}</p>
+                </div>
+                <div self="size-x1" class='item' data-type="b">
+                    <p class="title">我的二代</p>
+                    <p class="number">{$secondCount}</p>
+                </div>
+                <div self="size-x1" class='item' data-type="c">
+                    <p class="title">销售总额 (积分)</p>
+                    <p class="number">0</p>
+                </div>
+            </div>
+           <table class="table" id="table">
+              <thead>
+                <tr>
+                  <th>序号</th>
+                  <th>时间</th>
+                  <th>预留</th>
+                  <th>被推荐人</th>
+                  <th>业绩</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>2011/11/11</td>
+                  <td>yuliu</td>
+                  <td>18640444444</td>
+                  <td>13223</td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+        <!-- 导航区菜单 end -->
+        <!-- 个人中心底部菜单 start -->
+<div layout="row center-justify" id="foot-bar">
+    <div self="size-x1" class="item" onclick="jump('home.html')">
+        <span class="iconfont icon-home"></span>
+        <div class="title">首页</div>
+    </div>
+    <div self="size-x1" class="item" onclick="jump('building.html')">
+        <span class="iconfont icon-jiaoyi"></span>
+        <div class="title">交易</div>
+    </div>
+    <div self="size-x1" class="item" onclick="jump('fenxiang.html')">
+        <span class="iconfont icon-fenxiang"></span>
+        <div class="title">分享</div>
+    </div>
+    <div self="size-x1" class="item active" onclick="jump('self.html')">
+        <span class="iconfont icon-user"></span>
+        <div class="title">我的</div>
+    </div>
+</div>
+<!-- 个人中心底部菜单 end -->
+
+    </div>
+   
+</body>
+<!-- 个人中心的容器 end -->
+
+<script src="__PUBLIC__/dest/js/lib/jquery-3.3.1.min.js"></script>
+<script src="__PUBLIC__/dest/js/lib/global.js"></script>
+<script src="__PUBLIC__/dest/js/page/tuiguang.js"></script>
+</html>

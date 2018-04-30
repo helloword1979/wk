@@ -1,17 +1,13 @@
-var valid_number_reg = /^[+]{0,1}(\d+)$|^[+]{0,1}(\d+\.\d+)$/;
 $(document).ready(function(){
 
     $("#submit").click(function(){
         var params = getInputParam("form");
         for (var k in params) {
             if (!params[k]) {
-                return notify("请正确填写转出信息");
+                return notify("请正确填写提取信息");
             }
         }
-        console.log("params", params)
-        if (!valid_number_reg.test(params.number)) {
-             return notify("请正确填写转出数量");
-        }
+        transfer(params);
        
     });
 });

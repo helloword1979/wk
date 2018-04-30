@@ -29,3 +29,17 @@
 .form {
     margin-top: 10px
 }
+.form .weui-cell {
+    padding-left: 60px;
+}
+.form .title {
+    line-height: 34px;
+    font-size: 14px;
+}
+.form .name {
+    color:#4d4d4d;
+}
+.form .percent {
+    margin-left: 10px;
+    color: #36a1fa;
+}
